@@ -1,0 +1,10 @@
+Character(Enf, Enfermeira, color=green, image=enfermeira)
+Character(Jo, Joao, color=yellow, image=joao)
+label start
+show cenario with Fade
+Enf \"Bom dia, Sr. João! Como está se recuperando depois da queda de ontem?
+Jo \"Bom dia Maria, estou bem. Fiquei com medo de andar depois de ter tropeçado no fio do ventilador. 
+Enf \"Percebi que o senhor está andando menos, passa muito tempo na cama ou na cadeira.
+Jo \"Vou evitar andar agora, ainda mais depois que colocaram o soro. Os quartos tem pouco espaço para andar também, então prefiro ficar na cama.
+Enf \"Entendo sua preocupação, mas o medo pode aumentar ainda mais o risco de cair. Além disso, a equipe de saúde pode lhe ajudar a ficar mais confiante mesmo com o soro.
+screen cenario with Fade

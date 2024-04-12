@@ -1,0 +1,28 @@
+[
+    {
+        "Question": "O sapato com solado antiderrapante ajuda a evitar que Dona Severina escorregue",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 1
+    },
+    {
+        "Question": "Roupas confortáveis ajudam Dona Severina a andar com segurança",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 1
+    },
+    {
+        "Question": "As saias longas não aumentam o risco de Dona Severina tropeçar e cair",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 2
+    },
+    {
+        "Question": "Como Dona Severina não sabe ler, ela deve prestar atenção nas orientações da enfermeira",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 1
+    },
+    {
+        "Question": "Seguir as orientações dos profissionais de saúde ajuda Dona Severina a não cair",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 1
+    }
+]
+

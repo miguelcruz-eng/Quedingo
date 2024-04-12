@@ -1,0 +1,28 @@
+[
+    {
+        "Question": "Dona Severina não tem risco de quedas porque faz tudo sozinha",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 2
+    },
+    {
+        "Question": "Estar no hospital, que é ambiente novo para Dona Severina, aumenta o risco de cair",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 1
+    },
+    {
+        "Question": "A necessidade de usar a bengala aumenta o risco de quedas",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 2
+    },
+    {
+        "Question": "O acompanhante não é importante para evitar quedas",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 2
+    },
+    {
+        "Question": "Deixar os objetos na mesa ao lado da cama ajuda prevenir quedas",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 1
+    }
+]
+

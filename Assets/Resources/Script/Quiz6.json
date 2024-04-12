@@ -1,0 +1,28 @@
+[
+    {
+        "Question": "O jejum para exame aumenta o risco de Sr. Manoel cair",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 1
+    },
+    {
+        "Question": "Como Sr. Manoel tem diabetes e pressão alta, o risco de cair é maior",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 1
+    },
+    {
+        "Question": "Sr. Manoel não precisa se preocupar com os remédios de pressão pois eles não interferem nas quedas",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 2
+    },
+    {
+        "Question": "A altura da cama elevada não é uma medida importante para prevenir quedas",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 2
+    },
+    {
+        "Question": "As grades da cama devem estar sempre baixas porque Sr. Manoel pode querer levantar a qualquer momento",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 2
+    }
+]
+

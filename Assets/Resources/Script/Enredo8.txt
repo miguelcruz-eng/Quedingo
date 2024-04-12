@@ -1,0 +1,9 @@
+Character(Fis, Fisioterapeuta, color=yellow, image=fisio)
+Character(Jo, Joao, color=yellow, image=joao)
+label start
+show cenario with Fade
+Fis \"Olá Sr. João! Percebi que está melhor do inchaço nas pernas.
+Jo \"Olá Doutor Sergio! Estou sim, o remédio que estou tomando me dá vontade de ir no banheiro várias vezes. O Dr. disse que eu inchei por causa do problema do coração e do rim.
+Fis \"É um efeito comum do medicamento, mas tente ir ao banheiro com calma para não cair e sempre peça ajuda.
+Jo \"Isso que o Senhor está falando é importante. Vou procurar ter atenção porque o banheiro é pequeno então é fácil tropeçar em algo.
+screen cenario with Fade

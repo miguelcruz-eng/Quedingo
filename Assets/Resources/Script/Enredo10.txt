@@ -1,0 +1,9 @@
+Character(Fis, Fisioterapeuta, color=yellow, image=fisio)
+Character(Enf, Enfermeira, color=green, image=enfermeira)
+label start
+show cenario with Fade
+Fis \"Olá Maria! Soube que Dona Severina está desorientada. O que houve?
+Enf \"Olá Sergio! Ela apresentou uma desidratação, mas já está sendo tratada. Enquanto isso, estamos verificando se melhora e com atenção para que ela não caia.
+Fis \"Esse cuidado é importante, pois no momento ela está com risco muito alto para quedas. Vou passar no quarto e reforçar as orientações para família. 
+Enf \"Obrigada! É sempre bom manter todos informados e participando da prevenção de quedas.
+screen cenario with Fade

@@ -1,0 +1,28 @@
+[
+    {
+        "Question": "O curativo na perna não aumenta o risco de Sr. Manoel cair",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 2
+    },
+    {
+        "Question": "O objeto no corredor favoreceu a queda de Sr. Manoel",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 1
+    },
+    {
+        "Question": "A dificuldade de visão não tem relação com a queda",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 2
+    },
+    {
+        "Question": "A presença de barra de segurança ajuda a evitar quedas",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 1
+    },
+    {
+        "Question": "Como Sr. Manoel tem dificuldade para enxergar, precisa utilizar sempre os óculos para evitar uma queda",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 1
+    }
+]
+

@@ -1,0 +1,28 @@
+[
+    {
+        "Question": "O remédio para dormir contribuiu para a ocorrência da queda",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 1
+    },
+    {
+        "Question": "O Sr. João deveria ter pedido ajuda para ir ao banheiro",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 1
+    },
+    {
+        "Question": "O quarto escuro não contribuiu para a queda",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 2
+    },
+    {
+        "Question": "Ascender a luz poderia ter evitado a queda",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 1
+    },
+    {
+        "Question": "O piso molhado não influenciou na queda",
+        "Answers": ["sim", "nao"],
+        "CorrectAnswer": 2
+    }
+]
+

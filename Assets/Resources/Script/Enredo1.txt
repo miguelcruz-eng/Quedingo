@@ -1,0 +1,10 @@
+Character(Doc, Doutor, color=red, image=MEDICO)
+Character(Enf, Enfermeira, color=green, image=enfermeira)
+label start
+show cenario with Fade
+Doc \"Olá Maria! Tudo bem? Soube que o Sr. João caiu ontem.
+Enf \"Olá Doutor! Sr. João caiu a noite. Estava com sono por causa do remédio para dormir equando tentou ir ao banheiro e não viu que o chão estava molhado porque esqueceu de acender as luzes.
+Doc \"Ele iria ter alta hoje mas apesar de estar bem ficará internado para mais exames.
+Enf \"Que pena! Ele queria passar o final de semana em casa com a família.
+screen cenario with Fade
+
