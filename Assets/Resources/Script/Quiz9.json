@@ -10,7 +10,7 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "As saias longas não aumentam o risco de Dona Severina tropeçar e cair",
+        "Question": "As saias longas NÃO aumentam o risco de Dona Severina tropeçar e cair",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },

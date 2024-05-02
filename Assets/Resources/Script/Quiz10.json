@@ -5,12 +5,12 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "A desidratação não tem relação com a desorientação e o risco de cair",
+        "Question": "A desidratação NÃO tem relação com a desorientação e o risco de cair",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "A família de Dona Severina não deve se envolver na prevenção de quedas pois ela está internada",
+        "Question": "A família de Dona Severina NÃO deve se envolver na prevenção de quedas pois ela está internada",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },

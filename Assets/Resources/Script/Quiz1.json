@@ -10,7 +10,7 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "O quarto escuro não contribuiu para a queda",
+        "Question": "O quarto escuro NÃO contribuiu para a queda",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
@@ -20,7 +20,7 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "O piso molhado não influenciou na queda",
+        "Question": "O piso molhado NÃO influenciou na queda",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     }

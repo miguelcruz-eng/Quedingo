@@ -10,7 +10,7 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "A dor nas juntas não aumenta o risco de quedas",
+        "Question": "A dor nas juntas NÃO aumenta o risco de quedas",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
@@ -20,7 +20,7 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "A melhora na alimentação não tem relação com as quedas",
+        "Question": "A melhora na alimentação NÃO tem relação com as quedas",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     }

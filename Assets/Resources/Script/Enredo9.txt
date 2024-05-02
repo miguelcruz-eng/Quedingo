@@ -1,4 +1,4 @@
-Character(Sev, Severina, color=red, image=senhoraP)
+Character(Sev, Severina, color=red, image=severina)
 Character(Enf, Enfermeira, color=green, image=enfermeira)
 label start
 show cenario with Fade

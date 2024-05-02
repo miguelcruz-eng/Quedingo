@@ -1,5 +1,5 @@
+Character(Sev, Severina, color=red, image=severina)
 Character(Enf, Enfermeira, color=green, image=enfermeira)
-Character(Sev, Severina, color=red, image=senhoraP)
 label start
 show cenario with Fade
 Enf \"Bom dia Dona Severina! Como a senhora está hoje?

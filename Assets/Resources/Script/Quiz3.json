@@ -1,6 +1,6 @@
 [
     {
-        "Question": "O curativo na perna não aumenta o risco de Sr. Manoel cair",
+        "Question": "O curativo na perna NÃO aumenta o risco de Sr. Manoel cair",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
@@ -10,7 +10,7 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "A dificuldade de visão não tem relação com a queda",
+        "Question": "A dificuldade de visão NÃO tem relação com a queda",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },

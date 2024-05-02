@@ -5,6 +5,6 @@ show cenario with Fade
 Enf \"Bom dia Sr. Manoel! O senhor está bem?
 Man \"Estou me sentindo melhor mesmo depois do susto de ontem.
 Enf \"Ah! Eu soube que ontem o senhor caiu, como aconteceu?
-Man \"Eu estava no corredor segurando na barra de apoio, mas precisei desviar de uma maca que estava no caminho. Como eu não enxergo direito e estou com o curativo, não consegui achar um apoio próximo e desequilibrei.
-Enf \"Lembre-se de usar sempre os óculos de grau e pedir ajuda quando for andar. Além disso, o curativo da sua perna pode favorecer o desequilíbrio.
+Man \"Eu estava andando no corredor, mas precisei desviar de uma maca que estava no caminho. Como eu não enxergo direito, não consegui achar um apoio próximo e desequilibrei. 
+Enf \"Lembre-se de usar sempre os óculos de grau, pedir ajuda quando for andar e utilizar as barras de apoio do corredor. Além disso, o curativo da sua perna pode favorecer o desequilíbrio.
 screen cenario with Fade

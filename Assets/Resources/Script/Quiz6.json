@@ -10,12 +10,12 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "Sr. Manoel não precisa se preocupar com os remédios de pressão pois eles não interferem nas quedas",
+        "Question": "Sr. Manoel não precisa se preocupar com os remédios de pressão pois eles NÃO interferem nas quedas",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "A altura da cama elevada não é uma medida importante para prevenir quedas",
+        "Question": "A altura da cama elevada NÃO é uma medida importante para prevenir quedas",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },

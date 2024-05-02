@@ -1,26 +1,26 @@
 [
     {
-        "Question": "O inchaço nas pernas não interfere no risco de quedas",
+        "Question": "O inchaço nas pernas NÃO interfere no risco de quedas",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "A medicação que Sr. João está tomando aumenta o risco de quedas",
+        "Question": "A medicação que Dona Severina está tomando aumenta o risco de quedas",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "Como Sr. João precisa ir muitas vezes ao banheiro pode estar em maior risco de cair",
+        "Question": "Como Dona Severina precisa ir muitas vezes ao banheiro pode estar em maior risco de cair",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "O banheiro apertado não tem relação com o risco de cair",
+        "Question": "O banheiro apertado NÃO tem relação com o risco de cair",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "Sr. João não precisa pedir ajuda para andar pois as pernas estão menos inchadas",
+        "Question": "Dona Severina NÃO precisa pedir ajuda para andar pois as pernas estão menos inchadas",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     }

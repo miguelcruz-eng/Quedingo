@@ -10,17 +10,17 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "O soro no braço do Sr. João não interfere na queda",
+        "Question": "O soro no braço de Dona Luzia NÃO interfere na queda",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "Sr. João deve enfrentar sozinho o seu medo de cair",
+        "Question": "Dona Luzia deve enfrentar sozinha o seu medo de cair",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "Sr. João pode contar com ajuda de um profissional de saúde para retornar as atividades com segurança",
+        "Question": "Dona Luzia pode contar com ajuda de um profissional de saúde para retornar as atividades com segurança",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     }

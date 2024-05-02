@@ -54,12 +54,12 @@ public class InputDecoder
                 SplitToSay(StringToParse, character);
                 if(character.sideImage!=null)
                 {
-                    CharImage.SetActive(true);
-                    showAvatar(character.sideImage);
+                    //CharImage.SetActive(true);
+                    //showAvatar(character.sideImage);
                 }
                 else
                 {
-                    CharImage.SetActive(false);
+                    //CharImage.SetActive(false);
                 }
             }
         }

@@ -5,7 +5,7 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "Após a cirurgia Sr. João não está mais em risco de cair",
+        "Question": "Após a cirurgia Dona Luzia NÃO está mais em risco de cair",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
@@ -20,7 +20,7 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "Sr. João pode andar sozinho depois da cirurgia, se estiver acordado",
+        "Question": "Dona Luzia pode andar sozinho depois da cirurgia, se estiver acordado",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     }

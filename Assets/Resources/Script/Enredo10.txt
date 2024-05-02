@@ -1,5 +1,5 @@
-Character(Fis, Fisioterapeuta, color=yellow, image=fisio)
 Character(Enf, Enfermeira, color=green, image=enfermeira)
+Character(Fis, Fisioterapeuta, color=yellow, image=fisio)
 label start
 show cenario with Fade
 Fis \"Olá Maria! Soube que Dona Severina está desorientada. O que houve?

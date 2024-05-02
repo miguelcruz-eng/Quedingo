@@ -1,6 +1,6 @@
 [
     {
-        "Question": "Dona Severina não tem risco de quedas porque faz tudo sozinha",
+        "Question": "Dona Severina NÃO tem risco de quedas porque faz tudo sozinha",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
@@ -10,12 +10,12 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "A necessidade de usar a bengala aumenta o risco de quedas",
+        "Question": "Usar bengala sem orientação de um profissional de saúde aumenta o risco de quedas",
         "Answers": ["sim", "nao"],
-        "CorrectAnswer": 2
+        "CorrectAnswer": 1
     },
     {
-        "Question": "O acompanhante não é importante para evitar quedas",
+        "Question": "O acompanhante NÃO é importante para evitar quedas",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },

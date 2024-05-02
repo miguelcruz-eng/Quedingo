@@ -15,7 +15,7 @@ public class Testing : MonoBehaviour
         InputDecoder.PII = Resources.Load("Prefabs/PersonagemII") as GameObject;
         InputDecoder.DialogueTextObject = GameObject.Find("Dialogue_Text");
         InputDecoder.NamePlateTextObject = GameObject.Find("NamePlate_Text");
-        InputDecoder.CharImage = GameObject.Find("Personagem");
+        //InputDecoder.CharImage = GameObject.Find("Personagem");
         InputDecoder.labels = new List<Label>();
 
         InputDecoder.Commands = new List<string>();
