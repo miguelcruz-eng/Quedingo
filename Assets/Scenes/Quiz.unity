@@ -207,7 +207,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
+  m_fontSize: 14.4
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -886,7 +886,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.39322582, y: 1}
-  m_AnchoredPosition: {x: 1.7299805, y: 0.12250137}
+  m_AnchoredPosition: {x: 1.7299795, y: 0.12250137}
   m_SizeDelta: {x: 3.13, y: 0.245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &434346926
@@ -1088,7 +1088,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.65
+  m_fontSize: 34.25
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1314,7 +1314,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.25
+  m_fontSize: 30.1
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1524,6 +1524,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1791024578}
+        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+        m_MethodName: playButtonAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1791024578}
         m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
         m_MethodName: voltarMenu
@@ -1751,7 +1763,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.01877241, y: 0}
   m_AnchorMax: {x: 0.712515, y: 0.63900006}
-  m_AnchoredPosition: {x: 0.26249695, y: 1.0727005}
+  m_AnchoredPosition: {x: 0.26249695, y: 1.0726929}
   m_SizeDelta: {x: 0.875, y: 0.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1691218304
@@ -1936,6 +1948,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1791024578}
+        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+        m_MethodName: playButtonAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1710827585}
         m_TargetAssemblyTypeName: AnswerScript, Assembly-CSharp
         m_MethodName: BotaoOpcao2Clicado
@@ -2160,6 +2184,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1791024578}
+        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+        m_MethodName: playButtonAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1744235879}
         m_TargetAssemblyTypeName: AnswerScript, Assembly-CSharp
         m_MethodName: BotaoOpcao1Clicado
@@ -2308,7 +2344,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.1
+  m_fontSize: 32
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2575,7 +2611,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.45
+  m_fontSize: 50
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

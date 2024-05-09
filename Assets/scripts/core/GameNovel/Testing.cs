@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Testing : MonoBehaviour
 {
+    private AudioSource audioSource; // Referência ao componente AudioSource
     void Awake()
     {
+        audioSource = gameObject.AddComponent<AudioSource>(); // Cria o componente AudioSource
         // Inicialize outros objetos no InputDecoder
         InputDecoder.InterfaceElements = GameObject.Find("UI_Elements");
         InputDecoder.canvas = GameObject.Find("ImageLayers");
@@ -74,5 +76,46 @@ public class Testing : MonoBehaviour
     public void setinha()
     {
         seta = true;
+    }
+
+    public void PlayAudio(string audioFilePath, System.Action onComplete = null)
+    {
+        // Carrega o arquivo de áudio
+        AudioClip audioClip = Resources.Load<AudioClip>(audioFilePath);
+
+        // Verifica se o arquivo de áudio foi carregado com sucesso
+        if (audioClip != null)
+        {
+            // Define a clip do AudioSource como o áudio carregado
+            audioSource.clip = audioClip;
+
+            // Reproduz o áudio
+            audioSource.Play();
+
+            // Invoca a ação onComplete após a reprodução do áudio terminar
+            if (onComplete != null)
+            {
+                StartCoroutine(WaitForAudio(audioClip.length, onComplete));
+            }
+        }
+        else
+        {
+            Debug.LogError("Falha ao carregar o arquivo de áudio em: " + audioFilePath);
+        }
+    }
+
+    private IEnumerator WaitForAudio(float duration, System.Action onComplete)
+    {
+        yield return new WaitForSeconds(duration);
+        onComplete?.Invoke();
+    }
+
+    public void playButtonAudio()
+    {
+        // Reproduz o áudio ao clicar no botão
+        PlayAudio("Audio/button", () =>
+        {
+            // funções extras
+        });
     }
 }

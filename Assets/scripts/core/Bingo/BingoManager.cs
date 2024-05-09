@@ -22,6 +22,8 @@ public class BingoManager : MonoBehaviour
     public int estrelas;
     public bool vitoria = false;
 
+    private bool buttonPressed = false; // Flag para indicar se o botão foi pressionado
+
     private void Start()
     {
         bingoObject.SetActive(true);
@@ -31,6 +33,18 @@ public class BingoManager : MonoBehaviour
         InitializeNumberImages();
         // Adiciona um listener para o botão
         startButton.onClick.AddListener(StartAnimation);
+
+        // Inicia o contador para chamar a função StartAnimation a cada 6 segundos
+        InvokeRepeating("AutoStartAnimation", 6f, 6f);
+    }
+
+    // Função para iniciar automaticamente a animação a cada 6 segundos
+    private void AutoStartAnimation()
+    {
+        if (!buttonPressed)
+        {
+            StartAnimation();
+        }
     }
 
     private void InitializeNumbers()
@@ -116,6 +130,13 @@ public class BingoManager : MonoBehaviour
             // Se vitoria for falso, ativar o GameObject chamado "perdeu"
             derrotaObject.SetActive(true);
         }
+    }
+
+    // Função chamada quando o botão é pressionado
+    // Função chamada quando o botão é pressionado
+    public void OnStartButtonPressed()
+    {
+        buttonPressed = true;
     }
 
     void SaveEstrelas()
