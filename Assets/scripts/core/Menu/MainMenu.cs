@@ -17,13 +17,10 @@ public class MainMenu : MonoBehaviour
     public int points;
     public int cartelas;
     public int estrelas;
-    public TextMeshProUGUI PointsTxt;
     public TextMeshProUGUI PointsTxt2;
     public TextMeshProUGUI PointsTxt3;
     public TextMeshProUGUI PointsTxt4;
     public TextMeshProUGUI PointsTxt5;
-    public TextMeshProUGUI CartelasTxt;
-    public TextMeshProUGUI EstrelasTxt;
     private AudioSource audioSource; // Referência ao componente AudioSource
 
     // Start is called before the first frame update
@@ -33,25 +30,19 @@ public class MainMenu : MonoBehaviour
         LoadPoints();
         LoadCartelas();
         LoadEstrelas();
-        PointsTxt.SetText(points.ToString());
         PointsTxt2.SetText(points.ToString());
         PointsTxt3.SetText(points.ToString());
         PointsTxt4.SetText(points.ToString());
         PointsTxt5.SetText(points.ToString());
-        CartelasTxt.SetText(cartelas.ToString());
-        EstrelasTxt.SetText(estrelas.ToString());
     }
 
     // Update is called once per frame
     void Update()
     {
-        PointsTxt.SetText(points.ToString());
         PointsTxt2.SetText(points.ToString());
         PointsTxt3.SetText(points.ToString());
         PointsTxt4.SetText(points.ToString());
         PointsTxt5.SetText(points.ToString());
-        CartelasTxt.SetText(cartelas.ToString());
-        EstrelasTxt.SetText(estrelas.ToString());
         SavePoints();
         SaveCartelas();
     }

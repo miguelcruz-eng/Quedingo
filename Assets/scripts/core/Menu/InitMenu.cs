@@ -17,6 +17,7 @@ public class InitMenu : MonoBehaviour
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>(); // Cria o componente AudioSource
+        Invoke("goMenu", 5f);
     }
 
     // Update is called once per frame
@@ -69,9 +70,6 @@ public class InitMenu : MonoBehaviour
 
     public void goMenu()
     {
-        PlayAudio("Audio/button", () =>
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        });
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
