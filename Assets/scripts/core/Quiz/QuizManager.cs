@@ -19,15 +19,17 @@ public class QuizManager : MonoBehaviour
 
     public TextMeshProUGUI AtencaoTxt;
     public TextMeshProUGUI QuestionTxt;
-    public TextMeshProUGUI PointsTxt;
-    public TextMeshProUGUI PointsTxt2;
 
     public GameObject simImage;
     public GameObject naoImage;
     public GameObject backButton;
     public GameObject atencao;
+    public GameObject bingo;
+    public GameObject jogar;
 
     private AudioSource audioSource; // Referência ao componente AudioSource
+    public string conclusaoSource;
+    public string questoesSource;
 
     private void Start()
     {
@@ -108,32 +110,38 @@ public class QuizManager : MonoBehaviour
             QuestionTxt.text = QnA[currentQuestion].Question;
             SetAnswers();
             currentQuestion++;
+            PlayAudio("Audio/"+questoesSource+"/Q"+currentQuestion, () =>
+            {
+            });
         }
         else
         {
             Debug.Log("Acabaram as perguntas...");
             atencao.SetActive(true);
+            PlayAudio("Audio/"+conclusaoSource, () =>
+            {
+                atencao.SetActive(false);
+                bingo.SetActive(true);
+                if(points >= 3)
+                {
+                    jogar.SetActive(true);
+                }
+            });
         }
         
     }
 
-    void SavePoints()
+    public void playBingo()
     {
-        PlayerPrefs.SetInt("Points", points);
-        PlayerPrefs.Save();
-    }
-
-    public void LoadPoints()
-    {
-        // Carregar o valor de 'points' do PlayerPrefs
-        points = PlayerPrefs.GetInt("Points", 0);
-        // Se o valor não existir, será usado o valor padrão (0 no caso)
+        PlayAudio("Audio/button", () =>
+        {
+            SceneManager.LoadScene(4);
+        });
     }
     public void voltarMenu()
     {
         PlayAudio("Audio/button", () =>
         {
-            SavePoints();
             SceneManager.LoadScene(1);
         });
     }

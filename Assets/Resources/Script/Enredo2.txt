@@ -3,9 +3,10 @@ Character(Enf, Enfermeira, color=green, image=enfermeira)
 label start
 show cenario with Fade
 Enf \"Bom dia Dona Severina! Como a senhora está hoje?
-Sev \"Bom dia! Estou bem e você?
+Sev \"Estou bem, cada dia melhor.
 Enf \"Tudo bem. Percebi que está sem acompanhante, precisa de ajuda?
-Sev \"Sim, minha filha precisou ir em casa, mas volta logo. Não se preocupe, eu sei fazer tudo sozinha, não vou precisar de ajuda.
-Enf \"Lembre-se que o hospital é um ambiente novo que oferece risco para quedas. 
-Enf \"Vou lhe ajudar deixando seus objetos na mesinha ao lado da cama, a altura da cama baixa com rodas travadas e lhe ajudar sempre que preciso.
+Sev \"Minha filha precisou ir em casa, mas volta logo. 
+Sev \"Não se preocupe, eu sei fazer tudo sozinha, não vou precisar de ajuda.
+Enf \"Lembre-se que o hospital é um lugar diferente de casa. 
+Enf \"Vou deixar seus objetos na mesinha ao lado da cadeira e lhe ajudar sempre que preciso.
 screen cenario with Fade

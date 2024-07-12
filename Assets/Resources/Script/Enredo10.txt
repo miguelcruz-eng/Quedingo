@@ -3,7 +3,8 @@ Character(Fis, Fisioterapeuta, color=yellow, image=fisio)
 label start
 show cenario with Fade
 Fis \"Olá Maria! Soube que Dona Severina está desorientada. O que houve?
-Enf \"Olá Sergio! Ela apresentou uma desidratação, mas já está sendo tratada. Enquanto isso, estamos verificando se melhora e com atenção para que ela não caia.
-Fis \"Esse cuidado é importante, pois no momento ela está com risco muito alto para quedas. Vou passar no quarto e reforçar as orientações para família. 
+Enf \"Olá Sergio! Ela apresentou uma desidratação, mas já está melhorando.
+Fis \"É bom ter atenção pois no momento ela está com risco muito alto para quedas. 
+Fis \"Vou reforçar com a família que ela deve ter sempre alguém por perto.
 Enf \"Obrigada! É sempre bom manter todos informados e participando da prevenção de quedas.
 screen cenario with Fade

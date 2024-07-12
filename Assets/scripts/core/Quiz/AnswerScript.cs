@@ -11,26 +11,24 @@ public class AnswerScript : MonoBehaviour
 
     void Awake()
     {
-        quizManager.LoadPoints();
-        quizManager.PointsTxt.SetText(quizManager.points.ToString());
-        quizManager.PointsTxt2.SetText(quizManager.points.ToString());
         quizManager.currentQuestion = 0;
     }
 
     void Start()
     {
-        string quiz = PlayerPrefs.GetString("QuizData");
-        string att = PlayerPrefs.GetString("AtencaoData");
+        int numeroAleatorio = PlayerPrefs.GetInt("numeroAleatorio", 1);
+        string quiz =  "Quiz"+numeroAleatorio;
+        string att = "atencao"+numeroAleatorio;
         quizManager.readScript("Script/"+quiz);
         quizManager.readText("Script/"+att);
+        quizManager.conclusaoSource = "Conclusao/CONCLUSAO"+numeroAleatorio;
+        quizManager.questoesSource = "Questoes/Historia"+numeroAleatorio;
         quizManager.atencao.SetActive(false);
-
     }
 
     void Update()
     {
-        quizManager.PointsTxt.SetText(quizManager.points.ToString());
-        quizManager.PointsTxt2.SetText(quizManager.points.ToString());
+
     }
 
     public bool isCorrect = false;

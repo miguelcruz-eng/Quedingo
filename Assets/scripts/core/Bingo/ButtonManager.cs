@@ -8,6 +8,9 @@ public class ButtonManager : MonoBehaviour
 {
     public BingoManager bingoManager;
     public List<Button> buttons; // Lista de botões
+
+    private bool[] buttonStates = new bool[25];
+
     public List<TextMeshProUGUI> textMeshPros; // Lista de TextMeshPro associados aos botões ímpares
     int numberOfButtonsToFill;
 
@@ -16,7 +19,7 @@ public class ButtonManager : MonoBehaviour
         InitializeButtons();
         numberOfButtonsToFill = textMeshPros.Count; // Defina a quantidade desejada de botões a serem preenchidos
         AssignRandomOrderedValuesToButtons(numberOfButtonsToFill);
-        bingoManager.quantidadeNumerosSorteados = 48;
+        bingoManager.quantidadeNumerosSorteados = 25;
         foreach (Button button in buttons)
         {   
             button.onClick.AddListener(() => OnButtonClick(button, button.GetComponentInChildren<TextMeshProUGUI>()));
@@ -90,11 +93,11 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-
     // Função chamada quando um botão é clicado
     private void OnButtonClick(Button button, TextMeshProUGUI textMeshPro)
     {
         Debug.Log("Botão pressionado! Texto: " + textMeshPro.text);
+        // Debug.Log("Nome do botão: " + button.name);
 
         // Adicione aqui a lógica específica para o clique do botão
         //int calledNumber = bingoManager.selectedNumber;
@@ -102,10 +105,27 @@ public class ButtonManager : MonoBehaviour
         // Verifica se o número sorteado em BingoManager é igual ao conteúdo do TextMeshPro
         if (int.TryParse(textMeshPro.text, out int buttonNumber) && bingoManager.selectedNumbers.Contains(buttonNumber))
         {
+           // Extraia o índice do nome do botão
+            string buttonName = button.name;
+            if (buttonName.StartsWith("Button") && int.TryParse(buttonName.Substring(6), out int buttonIndex))
+            {
+                // Ajuste o índice para corresponder ao array zero-based (subtrair 1)
+                buttonIndex -= 1;
+
+                // Atualize o estado do botão no array
+                if (buttonIndex >= 0 && buttonIndex < buttonStates.Length)
+                {
+                    buttonStates[buttonIndex] = true;
+                }
+            }
+
             // Ativa o objeto filho chamado "Image" do botão
             ActivateChildObject(button.transform);
 
-            if(numberOfButtonsToFill <= 1)
+            // Desabilita o botão
+            button.interactable = false;
+
+            if(numberOfButtonsToFill <= 1 || AreSpecificButtonsDisabled())
             {
                 Debug.Log("Voce venceu!");
                 bingoManager.estrelas++;
@@ -114,14 +134,34 @@ public class ButtonManager : MonoBehaviour
                 bingoManager.bingoObject.SetActive(false);
                 // Habilite o GameObject "Vitoria"
                 bingoManager.vitoriaObject.SetActive(true);
+                if(bingoManager.estrelas>=3)
+                {
+                    bingoManager.bronze.SetActive(true);
+                    if(bingoManager.estrelas>=10)
+                    {
+                        bingoManager.prata.SetActive(true);
+                        if(bingoManager.estrelas>=10)
+                        {
+                            bingoManager.ouro.SetActive(true);
+                        }
+                    }
+                }
             }else
             {
                 numberOfButtonsToFill --;   
             }
             Debug.Log(numberOfButtonsToFill);
-            // Desabilita o botão
-            button.interactable = false;
         }
+    }
+
+    private bool AreSpecificButtonsDisabled()
+    {
+        return (buttonStates[0] && buttonStates[2] && buttonStates[4]) ||
+            (buttonStates[10] && buttonStates[12] && buttonStates[14]) ||
+            (buttonStates[20] && buttonStates[22] && buttonStates[24]) ||
+            (buttonStates[0] && buttonStates[10] && buttonStates[20]) ||
+            (buttonStates[2] && buttonStates[12] && buttonStates[22]) ||
+            (buttonStates[4] && buttonStates[14] && buttonStates[24]);
     }
 
 }

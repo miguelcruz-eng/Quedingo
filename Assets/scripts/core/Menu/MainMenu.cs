@@ -11,40 +11,25 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject Loja;
-    public GameObject Erro1;
-    public GameObject Erro2;
-    public int points;
-    public int cartelas;
-    public int estrelas;
-    public TextMeshProUGUI PointsTxt2;
-    public TextMeshProUGUI PointsTxt3;
-    public TextMeshProUGUI PointsTxt4;
-    public TextMeshProUGUI PointsTxt5;
+    public GameObject Menu;
+    public GameObject Como;
+    public GameObject Sobre;
+    public int trofeus;
+    public int timesPlayed;
     private AudioSource audioSource; // Referência ao componente AudioSource
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>(); // Cria o componente AudioSource
-        LoadPoints();
-        LoadCartelas();
-        LoadEstrelas();
-        PointsTxt2.SetText(points.ToString());
-        PointsTxt3.SetText(points.ToString());
-        PointsTxt4.SetText(points.ToString());
-        PointsTxt5.SetText(points.ToString());
+        LoadTrofeus();
+        LoadTimesPlayed();
     }
 
     // Update is called once per frame
     void Update()
     {
-        PointsTxt2.SetText(points.ToString());
-        PointsTxt3.SetText(points.ToString());
-        PointsTxt4.SetText(points.ToString());
-        PointsTxt5.SetText(points.ToString());
-        SavePoints();
-        SaveCartelas();
+        SaveTrofeus();
     }
 
     public void PlayAudio(string audioFilePath, System.Action onComplete = null)
@@ -88,19 +73,46 @@ public class MainMenu : MonoBehaviour
         });
     }
 
-
     public void playQuiz()
     {
         PlayAudio("Audio/button", () =>
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if(timesPlayed > 0) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            } else {
+                timesPlayed ++;
+                SaveTimesPlayed();
+                Menu.SetActive(false);
+                Como.SetActive(true);
+                PlayAudio("Audio/MP3_INSTRUÇÕES", () =>
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                });
+            }
         });
     }
 
     public void comoJogar()
     {
-        //MenuPrincipal.SetActive(false);
-       // MenuDicas.SetActive(true);
+        PlayAudio("Audio/button", () =>
+        {
+            Menu.SetActive(false);
+            Como.SetActive(true);
+            PlayAudio("Audio/MP3_INSTRUÇÕES", () =>
+            {
+                Menu.SetActive(true);
+                Como.SetActive(false);
+            });
+        });
+    }
+
+    public void sobreOjogo()
+    {
+        PlayAudio("Audio/button", () =>
+        {
+            Menu.SetActive(false);
+            Sobre.SetActive(true);
+        });
     }
 
     public void quitGame()
@@ -112,75 +124,27 @@ public class MainMenu : MonoBehaviour
         });
     }
 
-    void SavePoints()
+    void SaveTrofeus()
     {
-        PlayerPrefs.SetInt("Points", points);
+        PlayerPrefs.SetInt("Trofeus", trofeus);
         PlayerPrefs.Save();
     }
 
-    void LoadPoints()
+    void LoadTrofeus()
     {
-        points = PlayerPrefs.GetInt("Points", 0);
+        trofeus = PlayerPrefs.GetInt("Trofeus", 0);
         // Se o valor não existir, será usado o valor padrão (0 no caso)
     }
 
-    void SaveCartelas()
+    void SaveTimesPlayed()
     {
-        PlayerPrefs.SetInt("Cartelas", cartelas);
+        PlayerPrefs.SetInt("TimesPlayed", timesPlayed);
         PlayerPrefs.Save();
     }
 
-    void LoadCartelas()
+    void LoadTimesPlayed()
     {
-        cartelas = PlayerPrefs.GetInt("Cartelas", 0);
+        timesPlayed = PlayerPrefs.GetInt("TimesPlayed", 0);
         // Se o valor não existir, será usado o valor padrão (0 no caso)
-    }
-
-    void SaveEstrelas()
-    {
-        PlayerPrefs.SetInt("Estrelas", estrelas);
-        PlayerPrefs.Save();
-    }
-
-    void LoadEstrelas()
-    {
-        estrelas = PlayerPrefs.GetInt("Estrelas", 0);
-        // Se o valor não existir, será usado o valor padrão (0 no caso)
-    }
-
-    public void checaMoedas()
-    {
-        if(points < 3)
-        {
-            Loja.SetActive(false);
-            Erro1.SetActive(true);
-            Debug.Log("Moedas insuficientes");
-        }else
-        {
-            Debug.Log("Comprando Cartela...");
-            points -= 3;
-            cartelas++;
-            Update();
-        }
-
-    }
-
-    public void checaCartelas()
-    {
-        PlayAudio("Audio/button", () =>
-        {
-            if(cartelas <= 0)
-            {
-                Loja.SetActive(false);
-                Erro2.SetActive(true);
-                Debug.Log("Cartelas insuficientes");
-            }else
-            {
-                Debug.Log("Comecando bingo...");
-                cartelas--;
-                Update();
-                SceneManager.LoadScene(4);
-            }
-        });   
     }
 }

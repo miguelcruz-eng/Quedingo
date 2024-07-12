@@ -24,9 +24,13 @@ public class InputDecoder
     public static GameObject ImageInst;
     public static GameObject PI;
     public static GameObject PII;
+    public static GameObject DialogueBox;
     public static GameObject DialogueTextObject;
-    public static GameObject NamePlateTextObject;
+    //public static GameObject NamePlateTextObject;
     public static GameObject CharImage;
+
+    public static GameObject Quiz;
+    public static GameObject Repetir;
 
     public static List<Label> labels = new List<Label>();
 
@@ -100,6 +104,19 @@ public class InputDecoder
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public static void showButtons()
+    {
+        if (Repetir != null && Quiz != null)
+        {
+            Repetir.SetActive(true);
+            Quiz.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("Os objetos Quiz ou Repetir não estão inicializados.");
+        }
+    }
+
     #region Say Stuff
 
     public static void SplitToSay(string StringToParse, Character character)
@@ -121,7 +138,12 @@ public class InputDecoder
     {
         if(!InterfaceElements.activeInHierarchy) InterfaceElements.SetActive(true);
         DialogueTextObject.GetComponent<TextMeshProUGUI>().text = what;
-        NamePlateTextObject.GetComponent<TextMeshProUGUI>().text = who;
+        //NamePlateTextObject.GetComponent<TextMeshProUGUI>().text = who;
+        if (CharacterList[CharacterList.Count-2].fullName == who) {
+            DialogueBox.GetComponent<Image>().sprite = Resources.Load<Sprite>("images/balao1");
+        } else {
+            DialogueBox.GetComponent<Image>().sprite = Resources.Load<Sprite>("images/balao2");
+        }
         PausedHere = true;
     }
     
@@ -222,10 +244,11 @@ public class InputDecoder
             {                
                 MonoBehaviour.Destroy(t.gameObject, 3f);
             }
-            InterfaceElements.SetActive(false);
+            //InterfaceElements.SetActive(false);
         }
 
-        end();
+        //end();
+        showButtons();
     }
 
     #endregion

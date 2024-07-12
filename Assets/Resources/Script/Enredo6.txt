@@ -3,9 +3,9 @@ Character(Man, Manoel, color=yellow, image=manoel)
 label start
 show cenario with Fade
 Enf \"Olá Sr. Manoel! Como está se sentindo?
-Man \"Estou preocupado porque vou fazer um exame e não pude comer ainda. Eu sou diabético e posso sentir tontura. Também não pude tomar os remédios para a pressão, daqui a pouco vai estar alta.
-Enf \"Entendo sua preocupação, já fui informada que o senhor vai em breve para o exame. Estamos verificando a sua pressão e a glicemia. Caso o Sr. sinta algo, avise-nos.
-Man \"Obrigado pela informação, estou mais tranquilo agora.
-Enf \"Enquanto isso, peço que não tente andar sozinho, permaneça com a altura da cama baixa e com as grades elevadas para prevenir as quedas. 
+Man \"Estou preocupado porque não comi e não tomei os remédios porque vou fazer um exame.
+Man \"Eu sou diabético e tenho pressão alta, daqui a pouco posso ficar com tontura.
+Enf \"O senhor vai em breve para o exame. Caso o Sr. sinta algo, avise-nos.
+Enf \"Enquanto isso, não tente andar sozinho, permaneça com a altura da cama baixa e com as grades elevadas para não cair.
 Man \"Vou seguir as orientações e aviso se sentir algo.
 screen cenario with Fade

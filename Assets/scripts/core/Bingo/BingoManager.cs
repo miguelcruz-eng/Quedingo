@@ -15,6 +15,10 @@ public class BingoManager : MonoBehaviour
     public GameObject alertaObject;
     public GameObject derrotaObject;
 
+    public GameObject bronze;
+    public GameObject prata;
+    public GameObject ouro;
+
     private List<int> availableNumbers = new List<int>();
     public List<int> selectedNumbers = new List<int>(); // Lista para armazenar os números sorteados
     public int selectedNumber;
@@ -77,7 +81,7 @@ public class BingoManager : MonoBehaviour
 
     private void StartAnimation()
     {
-        if (availableNumbers.Count == 0)
+        if (availableNumbers.Count == 50 - quantidadeNumerosSorteados)
         {
             // Se não houver mais números disponíveis, encerre as interações
             Debug.Log("Todas as interações foram concluídas!");
@@ -108,12 +112,18 @@ public class BingoManager : MonoBehaviour
 
 
         // Verifica se atingiu a quantidade desejada de interações
-        if (availableNumbers.Count == 50 - quantidadeNumerosSorteados)
+        if (availableNumbers.Count == 50 - quantidadeNumerosSorteados + 1)
         {
             Debug.Log("Quantidade desejada de interações foi alcançada!");
             alertaObject.SetActive(true);
             startButton.interactable = false;
+            //Invoke("desativaAlerta", 5f);
         }
+    }
+
+    public void desativaAlerta()
+    {
+        alertaObject.SetActive(false);
     }
     
     public void botaoFinalizacao()
@@ -129,6 +139,7 @@ public class BingoManager : MonoBehaviour
         {
             // Se vitoria for falso, ativar o GameObject chamado "perdeu"
             derrotaObject.SetActive(true);
+            Invoke("voltarMenu", 10f);
         }
     }
 
@@ -141,13 +152,13 @@ public class BingoManager : MonoBehaviour
 
     void SaveEstrelas()
     {
-        PlayerPrefs.SetInt("Estrelas", estrelas);
+        PlayerPrefs.SetInt("Trofeus", estrelas);
         PlayerPrefs.Save();
     }
 
     void LoadEstrelas()
     {
-        estrelas = PlayerPrefs.GetInt("Estrelas", 0);
+        estrelas = PlayerPrefs.GetInt("Trofeus", 0);
         // Se o valor não existir, será usado o valor padrão (0 no caso)
     }
 
