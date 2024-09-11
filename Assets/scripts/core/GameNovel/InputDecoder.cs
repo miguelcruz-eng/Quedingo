@@ -240,11 +240,11 @@ public class InputDecoder
 
         foreach(Transform t in canvas.transform)
         {
-            if(t != PictureInstance.transform)
-            {                
-                MonoBehaviour.Destroy(t.gameObject, 3f);
-            }
-            //InterfaceElements.SetActive(false);
+            // if(t != PictureInstance.transform)
+            // {                
+            //     MonoBehaviour.Destroy(t.gameObject, 3f);
+            // }
+            DialogueBox.SetActive(false);
         }
 
         //end();

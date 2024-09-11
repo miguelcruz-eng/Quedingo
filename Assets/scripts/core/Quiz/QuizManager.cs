@@ -22,10 +22,16 @@ public class QuizManager : MonoBehaviour
 
     public GameObject simImage;
     public GameObject naoImage;
+    public GameObject verdadeiro;
+    public GameObject falso;
     public GameObject backButton;
     public GameObject atencao;
     public GameObject bingo;
     public GameObject jogar;
+    public GameObject estrela1;
+    public GameObject estrela2;
+    public GameObject estrela3;
+    
 
     private AudioSource audioSource; // Referência ao componente AudioSource
     public string conclusaoSource;
@@ -80,8 +86,8 @@ public class QuizManager : MonoBehaviour
 
     public void correct()
     {
-        options[0].SetActive(true);
-        options[1].SetActive(true);
+        falso.SetActive(true);
+        verdadeiro.SetActive(true);
         naoImage.SetActive(false);
         simImage.SetActive(false);
         backButton.SetActive(true);
@@ -124,7 +130,18 @@ public class QuizManager : MonoBehaviour
                 bingo.SetActive(true);
                 if(points >= 3)
                 {
-                    jogar.SetActive(true);
+                    Color color = estrela1.GetComponent<Image>().color;
+                    color.a = 255f;
+                    estrela1.GetComponent<Image>().color = color;
+                    if(points >= 4)
+                    {
+                        estrela2.GetComponent<Image>().color = color;
+                    }
+                    if(points >= 5)
+                    {
+                        jogar.SetActive(true);
+                        estrela3.GetComponent<Image>().color = color;
+                    }
                 }
             });
         }

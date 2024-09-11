@@ -67,7 +67,7 @@ public class AnswerScript : MonoBehaviour
     {
         quizManager.simImage.SetActive(true);
         quizManager.backButton.SetActive(false);
-        quizManager.options[1].SetActive(false);
+        quizManager.falso.SetActive(false);
         Answer(0); // Passa o índice 0 para representar a primeira opção
     }
 
@@ -76,7 +76,7 @@ public class AnswerScript : MonoBehaviour
     {
         quizManager.naoImage.SetActive(true);
         quizManager.backButton.SetActive(false);
-        quizManager.options[0].SetActive(false);
+        quizManager.verdadeiro.SetActive(false);
         Answer(1); // Passa o índice 1 para representar a segunda opção
     }
 }

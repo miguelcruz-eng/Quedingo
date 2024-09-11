@@ -136,13 +136,15 @@ public class ButtonManager : MonoBehaviour
                 bingoManager.vitoriaObject.SetActive(true);
                 if(bingoManager.estrelas>=3)
                 {
-                    bingoManager.bronze.SetActive(true);
+                    Color color = bingoManager.bronze.GetComponent<Image>().color;
+                    color.a = 255f;
+                    bingoManager.bronze.GetComponent<Image>().color = color;
                     if(bingoManager.estrelas>=10)
                     {
-                        bingoManager.prata.SetActive(true);
-                        if(bingoManager.estrelas>=10)
+                        bingoManager.prata.GetComponent<Image>().color = color;
+                        if(bingoManager.estrelas>=20)
                         {
-                            bingoManager.ouro.SetActive(true);
+                            bingoManager.ouro.GetComponent<Image>().color = color;
                         }
                     }
                 }

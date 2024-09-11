@@ -135,6 +135,7 @@ public class Testing : MonoBehaviour
     {
         PlayAudio("Audio/button", () =>
         {
+            InputDecoder.DialogueBox.SetActive(true);
             InputDecoder.Repetir.SetActive(false);
             InputDecoder.Quiz.SetActive(false);
 

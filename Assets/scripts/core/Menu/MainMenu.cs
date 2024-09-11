@@ -14,8 +14,12 @@ public class MainMenu : MonoBehaviour
     public GameObject Menu;
     public GameObject Como;
     public GameObject Sobre;
+    public GameObject Trophy;
     public int trofeus;
     public int timesPlayed;
+    public GameObject bronze;
+    public GameObject prata;
+    public GameObject ouro;
     private AudioSource audioSource; // Referência ao componente AudioSource
 
     // Start is called before the first frame update
@@ -112,6 +116,29 @@ public class MainMenu : MonoBehaviour
         {
             Menu.SetActive(false);
             Sobre.SetActive(true);
+        });
+    }
+
+    public void menuTrofeus()
+    {
+        PlayAudio("Audio/button", () =>
+        {
+            Menu.SetActive(false);
+            Trophy.SetActive(true);
+            if(trofeus>=3)
+            {
+                Color color = bronze.GetComponent<Image>().color;
+                color.a = 255f;
+                bronze.GetComponent<Image>().color = color;
+                if(trofeus>=10)
+                {
+                    prata.GetComponent<Image>().color = color;
+                    if(trofeus>=20)
+                    {
+                        ouro.GetComponent<Image>().color = color;
+                    }
+                }
+            }
         });
     }
 
