@@ -18,13 +18,17 @@ public class QuizManager : MonoBehaviour
     public int points;
 
     public TextMeshProUGUI AtencaoTxt;
+    public TextMeshProUGUI AtencaoTitulo;
     public TextMeshProUGUI QuestionTxt;
+    public TextMeshProUGUI FalasTxt;
 
     public GameObject simImage;
     public GameObject naoImage;
     public GameObject verdadeiro;
     public GameObject falso;
-    public GameObject backButton;
+    public GameObject uiToRemove;
+    public GameObject continuar;
+    public GameObject falas;
     public GameObject atencao;
     public GameObject bingo;
     public GameObject jogar;
@@ -36,6 +40,10 @@ public class QuizManager : MonoBehaviour
     private AudioSource audioSource; // Referência ao componente AudioSource
     public string conclusaoSource;
     public string questoesSource;
+    public string feedbackSource;
+    public string audioFSource;
+    public string atencaoSource;
+    public int index;
 
     private void Start()
     {
@@ -84,15 +92,27 @@ public class QuizManager : MonoBehaviour
         });
     }
 
-    public void correct()
+    public void Correct()
     {
-        falso.SetActive(true);
-        verdadeiro.SetActive(true);
-        naoImage.SetActive(false);
-        simImage.SetActive(false);
-        backButton.SetActive(true);
-        //QnA.RemoveAt(currentQuestion);
-        generateQuestion();
+        PlayAudio(audioFSource+"/F"+currentQuestion+"."+index, () =>
+        {
+        });
+    }
+
+    public void Continuar()
+    {
+        PlayAudio("Audio/button", () =>
+        {
+            continuar.SetActive(false);
+            falso.SetActive(true);
+            verdadeiro.SetActive(true);
+            falas.SetActive(false);
+            naoImage.SetActive(false);
+            simImage.SetActive(false);
+            uiToRemove.SetActive(true);
+            //QnA.RemoveAt(currentQuestion);
+            generateQuestion();
+        });
     }
 
     void SetAnswers()
@@ -126,8 +146,22 @@ public class QuizManager : MonoBehaviour
             atencao.SetActive(true);
             PlayAudio("Audio/"+conclusaoSource, () =>
             {
-                atencao.SetActive(false);
-                bingo.SetActive(true);
+                string filePath = atencaoSource+".1";
+                string fileContent = readText(filePath);
+                if (!string.IsNullOrEmpty(fileContent))
+                {
+                    AtencaoTxt.text = fileContent;
+                    PlayAudio("Audio/"+conclusaoSource+".1", () =>
+                    {
+                        atencao.SetActive(false);
+                        bingo.SetActive(true);
+                    });
+                }
+                else
+                {
+                    atencao.SetActive(false);
+                    bingo.SetActive(true);
+                }
                 if(points >= 3)
                 {
                     Color color = estrela1.GetComponent<Image>().color;
@@ -155,6 +189,13 @@ public class QuizManager : MonoBehaviour
             SceneManager.LoadScene(4);
         });
     }
+
+    public void ouvirNovamente()
+    {
+        PlayAudio("Audio/"+questoesSource+"/Q"+currentQuestion, () =>
+        {
+        });
+    }
     public void voltarMenu()
     {
         PlayAudio("Audio/button", () =>
@@ -165,17 +206,18 @@ public class QuizManager : MonoBehaviour
 
     #region LoadingScript
 
-    public void readText(string fileName)
+    public string readText(string fileName)
     {
         TextAsset textAsset = Resources.Load<TextAsset>(fileName);
 
         if (textAsset != null)
         {
-            AtencaoTxt.text = textAsset.text;
+            return textAsset.text;
         }
         else
         {
             Debug.LogError($"Arquivo '{fileName}' não encontrado na pasta Resources.");
+            return string.Empty;
         }
     }
 

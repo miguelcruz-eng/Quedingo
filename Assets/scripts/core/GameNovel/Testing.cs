@@ -42,7 +42,7 @@ public class Testing : MonoBehaviour
     {
         numeroAleatorio = Random.Range(1, 10);
         InputDecoder.InterfaceElements.SetActive(false);
-        InputDecoder.readScript("Script/Enredo"+numeroAleatorio);
+        InputDecoder.readScript("Script/Enredo/Enredo"+numeroAleatorio);
         PlayerPrefs.SetInt("numeroAleatorio", numeroAleatorio);
         PlayerPrefs.Save();
         dialogueSource = "Audio/Roteiros/ROTEIRO"+numeroAleatorio;
@@ -147,7 +147,7 @@ public class Testing : MonoBehaviour
 
             cont = 1;
 
-            InputDecoder.readScript("Script/Enredo"+numeroAleatorio);
+            InputDecoder.readScript("Script/Enredo/Enredo"+numeroAleatorio);
 
             PlayAudio(dialogueSource+"/Au1", () =>
             {

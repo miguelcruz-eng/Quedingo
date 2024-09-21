@@ -22,7 +22,7 @@ public class BingoManager : MonoBehaviour
     private List<int> availableNumbers = new List<int>();
     public List<int> selectedNumbers = new List<int>(); // Lista para armazenar os números sorteados
     public int selectedNumber;
-    public int quantidadeNumerosSorteados = 10; // Defina a quantidade desejada de números sorteados
+    public int quantidadeNumerosSorteados = 24; // Defina a quantidade desejada de números sorteados
     public int estrelas;
     public bool vitoria = false;
 

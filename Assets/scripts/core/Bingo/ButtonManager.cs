@@ -38,11 +38,13 @@ public class ButtonManager : MonoBehaviour
             Button button = GameObject.Find("Button" + i).GetComponent<Button>();
             buttons.Add(button);
 
-            if (i % 2 != 0)
-            {
-                TextMeshProUGUI textMeshPro = button.GetComponentInChildren<TextMeshProUGUI>();
-                textMeshPros.Add(textMeshPro);
-            }
+            // if (i % 2 != 0)
+            // {
+            //     TextMeshProUGUI textMeshPro = button.GetComponentInChildren<TextMeshProUGUI>();
+            //     textMeshPros.Add(textMeshPro);
+            // }
+            TextMeshProUGUI textMeshPro = button.GetComponentInChildren<TextMeshProUGUI>();
+            textMeshPros.Add(textMeshPro);
         }
     }
 
@@ -158,12 +160,20 @@ public class ButtonManager : MonoBehaviour
 
     private bool AreSpecificButtonsDisabled()
     {
-        return (buttonStates[0] && buttonStates[2] && buttonStates[4]) ||
-            (buttonStates[10] && buttonStates[12] && buttonStates[14]) ||
-            (buttonStates[20] && buttonStates[22] && buttonStates[24]) ||
-            (buttonStates[0] && buttonStates[10] && buttonStates[20]) ||
-            (buttonStates[2] && buttonStates[12] && buttonStates[22]) ||
-            (buttonStates[4] && buttonStates[14] && buttonStates[24]);
+        return (buttonStates[0] && buttonStates[1] && buttonStates[2] && buttonStates[3] && buttonStates[4]) || // Linha 1
+       (buttonStates[5] && buttonStates[6] && buttonStates[7] && buttonStates[8] && buttonStates[9]) || // Linha 2
+       (buttonStates[10] && buttonStates[11] && buttonStates[12] && buttonStates[13] && buttonStates[14]) || // Linha 3
+       (buttonStates[15] && buttonStates[16] && buttonStates[17] && buttonStates[18] && buttonStates[19]) || // Linha 4
+       (buttonStates[20] && buttonStates[21] && buttonStates[22] && buttonStates[23] && buttonStates[24]) || // Linha 5
+
+       (buttonStates[0] && buttonStates[5] && buttonStates[10] && buttonStates[15] && buttonStates[20]) || // Coluna 1
+       (buttonStates[1] && buttonStates[6] && buttonStates[11] && buttonStates[16] && buttonStates[21]) || // Coluna 2
+       (buttonStates[2] && buttonStates[7] && buttonStates[12] && buttonStates[17] && buttonStates[22]) || // Coluna 3
+       (buttonStates[3] && buttonStates[8] && buttonStates[13] && buttonStates[18] && buttonStates[23]) || // Coluna 4
+       (buttonStates[4] && buttonStates[9] && buttonStates[14] && buttonStates[19] && buttonStates[24]) || // Coluna 5
+
+       (buttonStates[0] && buttonStates[6] && buttonStates[12] && buttonStates[18] && buttonStates[24]) || // Diagonal principal
+       (buttonStates[4] && buttonStates[8] && buttonStates[12] && buttonStates[16] && buttonStates[20]);   // Diagonal secundária
     }
 
 }

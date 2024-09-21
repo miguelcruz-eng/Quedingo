@@ -51,6 +51,7 @@ Library: C:\Users\migue\Documents\miguel\Projetos\Quedingo\Quedingo\Temp\BurstOu
 --assembly-defines=mscorlib;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\migue\Documents\miguel\Projetos\Quedingo\Quedingo\Temp\Burst
+--debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.28f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\migue\Documents\miguel\Projetos\Quedingo\Quedingo\Library\Burst
 --output=C:\Users\migue\Documents\miguel\Projetos\Quedingo\Quedingo\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
