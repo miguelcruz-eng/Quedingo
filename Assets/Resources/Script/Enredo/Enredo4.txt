@@ -5,8 +5,6 @@ show cenario with Fade
 Enf \"Bom dia, Dona Luzia!  Como está se recuperando depois da queda de ontem?
 Luz \"Bom dia Maria, estou bem. Fiquei com medo de andar depois de ter tropeçado no fio do ventilador.
 Enf \"Percebi que a senhora está andando menos, passa muito tempo na cama ou na cadeira.
-Luz \"Vou evitar andar agora, ainda mais depois que colocaram o soro. 
-Luz \"O quarto tem pouco espaço para andar também, então prefiro ficar na cama.
-Enf \"O medo pode aumentar ainda mais o risco de cair. 
-Enf \"Lembre-se que a equipe de saúde pode lhe ajudar a ficar mais confiante mesmo com o soro.
+Luz \"Vou evitar andar agora, ainda mais depois que colocaram o soro. Os quartos tem pouco espaço para andar também, então prefiro ficar na cama.
+Enf \"O medo pode aumentar ainda mais o risco de cair. Lembre-se que a equipe de saúde pode lhe ajudar a ficar mais confiante, mesmo com o soro.
 screen cenario with Fade

@@ -115,6 +115,16 @@ public class QuizManager : MonoBehaviour
         });
     }
 
+    public void replayQuiz()
+    {
+        PlayAudio("Audio/button", () =>
+        {
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+        });
+    }
+
     void SetAnswers()
     {
         for(int i = 0; i < options.Length; i++)

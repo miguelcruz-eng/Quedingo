@@ -2,9 +2,8 @@ Character(Doc, Doutor, color=red, image=MEDICO)
 Character(Enf, Enfermeira, color=green, image=enfermeira)
 label start
 show cenario with Fade
-Doc \"Olá Maria! Soube que o Senhor João escorregou na enfermaria ontem a noite.
+Doc \"Olá Maria! Soube que o Senhor João caiu ontem.
 Enf \"Ele foi ao banheiro sem pedir ajuda e não viu o chão molhado porque o quarto estava escuro.
-Doc \"Imagino que ele estava com sono por causa do remédio para dormir. 
-Doc \"Nesse caso, vou adiar a alta para fazer novos exames.
+Doc \"Imagino que ele estava com sono por causa do remédio para dormir. Nesse caso, vou adiar a alta para fazer novos exames.
 Enf \"Que pena! Ele queria passar o final de semana em casa.
 screen cenario with Fade

@@ -12,12 +12,14 @@ using UnityEngine.SceneManagement;
 public class InitMenu : MonoBehaviour
 {
     private AudioSource audioSource; // Referência ao componente AudioSource
+    public GameObject menu1;
+    public GameObject menu2;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>(); // Cria o componente AudioSource
-        Invoke("goMenu", 5f);
+        StartCoroutine(goMenu());
     }
 
     // Update is called once per frame
@@ -68,8 +70,12 @@ public class InitMenu : MonoBehaviour
     }
 
 
-    public void goMenu()
+    private IEnumerator goMenu()
     {
+        yield return new WaitForSeconds(5f);
+        menu1.SetActive(false);
+        menu2.SetActive(true);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

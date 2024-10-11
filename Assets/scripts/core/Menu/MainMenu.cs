@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
     public GameObject Sobre;
     public GameObject Trophy;
     public int trofeus;
-    public int timesPlayed = 0;
+    public int timesPlayed;
     public GameObject bronze;
     public GameObject prata;
     public GameObject ouro;
