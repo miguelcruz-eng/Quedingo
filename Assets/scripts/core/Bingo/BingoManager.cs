@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
@@ -28,8 +29,17 @@ public class BingoManager : MonoBehaviour
 
     private bool buttonPressed = false; // Flag para indicar se o botão foi pressionado
 
+    private AudioSource audioSource; // Referência ao componente AudioSource
+    private AudioSource audioSourceBack;
+    private string numberSource;
+
     private void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>(); // Cria o componente AudioSource
+        audioSourceBack = gameObject.AddComponent<AudioSource>();
+        numberSource = "Audio/BINGO/";
+        PlayBackgroundAudio(numberSource+"musicaBINGO");
+
         bingoObject.SetActive(true);
         vitoriaObject.SetActive(false);
         LoadEstrelas();
@@ -102,6 +112,10 @@ public class BingoManager : MonoBehaviour
         // Atualiza o texto com o número sorteado
         textMeshPro.text = "" + selectedNumber;
 
+        PlayAudio(numberSource+selectedNumber, () =>
+        {
+        });
+
         // Ativa a imagem associada ao número sorteado e ajusta a transparência
         GameObject selectedImage = numberImages[selectedNumber - 1];
         Image imageComponent = selectedImage.GetComponent<Image>();
@@ -119,6 +133,64 @@ public class BingoManager : MonoBehaviour
             startButton.interactable = false;
             //Invoke("desativaAlerta", 5f);
         }
+    }
+
+    public void PlayBackgroundAudio(string audioFilePath)
+    {
+        // Carrega o arquivo de áudio
+        AudioClip audioClip = Resources.Load<AudioClip>(audioFilePath);
+
+        // Verifica se o arquivo de áudio foi carregado com sucesso
+        if (audioClip != null)
+        {
+            // Define a clip do AudioSource como o áudio carregado
+            audioSourceBack.clip = audioClip;
+
+            // Define o loop para true para repetir o áudio
+            audioSourceBack.loop = true;
+
+            // Define o volume do áudio
+            audioSourceBack.volume = 0.2f;
+
+            // Reproduz o áudio
+            audioSourceBack.Play();
+        }
+        else
+        {
+            Debug.LogError("Falha ao carregar o arquivo de áudio em: " + audioFilePath);
+        }
+    }
+
+    public void PlayAudio(string audioFilePath, System.Action onComplete = null)
+    {
+        // Carrega o arquivo de áudio
+        AudioClip audioClip = Resources.Load<AudioClip>(audioFilePath);
+
+        // Verifica se o arquivo de áudio foi carregado com sucesso
+        if (audioClip != null)
+        {
+            // Define a clip do AudioSource como o áudio carregado
+            audioSource.clip = audioClip;
+
+            // Reproduz o áudio
+            audioSource.Play();
+
+            // Invoca a ação onComplete após a reprodução do áudio terminar
+            if (onComplete != null)
+            {
+                StartCoroutine(WaitForAudio(audioClip.length, onComplete));
+            }
+        }
+        else
+        {
+            Debug.LogError("Falha ao carregar o arquivo de áudio em: " + audioFilePath);
+        }
+    }
+
+    private IEnumerator WaitForAudio(float duration, System.Action onComplete)
+    {
+        yield return new WaitForSeconds(duration);
+        onComplete?.Invoke();
     }
 
     public void desativaAlerta()
@@ -139,7 +211,7 @@ public class BingoManager : MonoBehaviour
         {
             // Se vitoria for falso, ativar o GameObject chamado "perdeu"
             derrotaObject.SetActive(true);
-            Invoke("voltarMenu", 10f);
+            Invoke("VoltarMenu", 10f);
         }
     }
 
@@ -162,7 +234,7 @@ public class BingoManager : MonoBehaviour
         // Se o valor não existir, será usado o valor padrão (0 no caso)
     }
 
-    public void voltarMenu()
+    public void VoltarMenu()
     {
         SaveEstrelas();
         SceneManager.LoadScene(1);
