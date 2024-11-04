@@ -1,26 +1,26 @@
 [
     {
-        "Question": "O inchaço nas pernas NÃO interfere no risco de quedas",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. O inchaço nas pernas não interfere no risco de quedas.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "A medicação que Dona Severina está tomando aumenta o risco de quedas",
+        "Question": "Na sua opinião, a medicação que Dona Severina está tomando aumenta o risco de quedas?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "Como Dona Severina precisa ir muitas vezes ao banheiro pode estar em maior risco de cair",
+        "Question": "Verdadeiro ou falso? Como Dona Severina precisa ir muitas vezes ao banheiro pode estar em maior risco de cair.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "O banheiro apertado NÃO tem relação com o risco de cair",
+        "Question": "Para você, o banheiro apertado não tem relação com o risco de cair?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "Dona Severina NÃO precisa pedir ajuda para andar pois as pernas estão menos inchadas",
+        "Question": "Dona Severina não precisa pedir ajuda para andar pois as pernas estão menos inchadas. Você entende que é verdadeiro ou falso?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     }

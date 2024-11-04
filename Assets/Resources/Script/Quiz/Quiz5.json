@@ -1,26 +1,26 @@
 [
     {
-        "Question": "As pessoas que já caíram têm maior chance de cair novamente ",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. As pessoas que já caíram têm maior chance de cair novamente.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "O treinamento para usar o andador é importante para evitar as quedas",
+        "Question": "Na sua opinião, o treinamento para usar o andador é importante para evitar as quedas?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "A dor nas juntas NÃO aumenta o risco de quedas",
+        "Question": "Verdadeiro ou falso? A dor nas juntas NÃO aumenta o risco de quedas.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "O risco de cair é maior porque Sr. Antônio tem dificuldade de andar",
+        "Question": "Para você, o risco de cair é maior porque Sr. Antônio tem dificuldade de andar?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "A melhora na alimentação NÃO tem relação com as quedas",
+        "Question": "A melhora na alimentação NÃO tem relação com as quedas. Você entende que é verdadeiro ou falso?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     }

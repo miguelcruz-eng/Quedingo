@@ -1,26 +1,26 @@
 [
     {
-        "Question": "Objetos espalhados pela enfermaria aumentam o risco de quedas",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. Objetos espalhados pela enfermaria aumentam o risco de quedas.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "O medo de cair aumenta o risco de uma nova queda",
+        "Question": "Para você, o medo de cair aumenta o risco de uma nova queda?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "O soro no braço de Dona Luzia NÃO interfere na queda",
+        "Question": "Verdadeiro ou falso? O soro no braço de Dona Luzia NÃO interfere na queda.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "Dona Luzia deve enfrentar sozinha o seu medo de cair",
+        "Question": "Na sua opinião, Dona Luzia deve enfrentar sozinho o seu medo de cair?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "Dona Luzia pode contar com ajuda de um profissional de saúde para retornar as atividades com segurança",
+        "Question": "Dona Luzia pode contar com ajuda de um profissional de saúde para retornar as atividades com segurança. Você entende que é verdadeiro ou falso?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     }

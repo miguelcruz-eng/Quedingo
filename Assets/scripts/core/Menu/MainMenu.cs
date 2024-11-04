@@ -88,7 +88,7 @@ public class MainMenu : MonoBehaviour
                 SaveTimesPlayed();
                 Menu.SetActive(false);
                 Como.SetActive(true);
-                PlayAudio("Audio/MP3_INSTRUÇÕES", () =>
+                PlayAudio("Audio/instrucoes", () =>
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 });
@@ -102,7 +102,7 @@ public class MainMenu : MonoBehaviour
         {
             Menu.SetActive(false);
             Como.SetActive(true);
-            PlayAudio("Audio/MP3_INSTRUÇÕES", () =>
+            PlayAudio("Audio/instrucoes", () =>
             {
                 Menu.SetActive(true);
                 Como.SetActive(false);

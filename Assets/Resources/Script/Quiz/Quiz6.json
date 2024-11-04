@@ -1,26 +1,26 @@
 [
     {
-        "Question": "O jejum para exame aumenta o risco de Sr. Manoel cair",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. O jejum para exame aumenta o risco de Sr. Manoel cair.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "Como Sr. Manoel tem diabetes e pressão alta, o risco de cair é maior",
+        "Question": "Para você, como Sr. Manoel tem diabetes e pressão alta, o risco de cair é maior?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "Sr. Manoel não precisa se preocupar com os remédios de pressão pois eles NÃO interferem nas quedas",
+        "Question": "Sr. Manoel NÃO precisa se preocupar com os remédios de pressão pois eles não interferem nas quedas. Você entende que é verdadeiro ou falso?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "A altura da cama elevada NÃO é uma medida importante para prevenir quedas",
+        "Question": "Verdadeiro ou falso? A altura da cama pode ser mantida elevada para prevenir quedas.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "As grades da cama devem estar sempre baixas porque Sr. Manoel pode querer levantar a qualquer momento",
+        "Question": "Na sua opinião, as grades da cama devem estar sempre baixas porque Sr. Manoel pode querer levantar a qualquer momento?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     }

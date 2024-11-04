@@ -132,24 +132,8 @@ public class ButtonManager : MonoBehaviour
                 Debug.Log("Voce venceu!");
                 bingoManager.estrelas++;
                 bingoManager.vitoria = true;
-                // Desabilite o GameObject "Bingo"
-                bingoManager.bingoObject.SetActive(false);
-                // Habilite o GameObject "Vitoria"
-                bingoManager.vitoriaObject.SetActive(true);
-                if(bingoManager.estrelas>=3)
-                {
-                    Color color = bingoManager.bronze.GetComponent<Image>().color;
-                    color.a = 255f;
-                    bingoManager.bronze.GetComponent<Image>().color = color;
-                    if(bingoManager.estrelas>=10)
-                    {
-                        bingoManager.prata.GetComponent<Image>().color = color;
-                        if(bingoManager.estrelas>=20)
-                        {
-                            bingoManager.ouro.GetComponent<Image>().color = color;
-                        }
-                    }
-                }
+
+                bingoManager.TelaTrofeus();
             }else
             {
                 numberOfButtonsToFill --;   

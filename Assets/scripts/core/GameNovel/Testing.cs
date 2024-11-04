@@ -40,7 +40,7 @@ public class Testing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        numeroAleatorio = Random.Range(1, 10);
+        numeroAleatorio = Random.Range(1, 11);
         InputDecoder.InterfaceElements.SetActive(false);
         InputDecoder.readScript("Script/Enredo/Enredo"+numeroAleatorio);
         PlayerPrefs.SetInt("numeroAleatorio", numeroAleatorio);

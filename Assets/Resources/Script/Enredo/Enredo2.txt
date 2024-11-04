@@ -3,7 +3,7 @@ Character(Enf, Enfermeira, color=green, image=enfermeira)
 label start
 show cenario with Fade
 Enf \"Bom dia Dona Severina! Como a senhora está hoje?
-Sev \"Estou bem, cada dia melhor.
+Sev \"Olá Enfermeira! Estou bem, cada dia melhor.
 Enf \"Percebi que está sem acompanhante, precisa de ajuda?
 Sev \"Minha filha precisou ir em casa, mas volta logo. Não se preocupe, eu sei fazer tudo sozinha, não vou precisar de ajuda.
 Enf \"Lembre-se que o hospital é um lugar diferente de casa. 

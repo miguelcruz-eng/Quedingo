@@ -1,26 +1,26 @@
 [
     {
-        "Question": "Dona Severina NÃO tem risco de quedas porque faz tudo sozinha",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. Você acha que Dona Severina NÃO tem risco de quedas porque faz tudo sozinha?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "Estar no hospital, que é ambiente novo para Dona Severina, aumenta o risco de cair",
+        "Question": "Para você, estar no hospital, que é ambiente novo para Dona Severina, aumenta o risco de quedas?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "Usar bengala sem orientação de um profissional de saúde aumenta o risco de quedas",
+        "Question": "Verdadeiro ou falso? Usar bengala sem orientação de um profissional de saúde aumenta o risco de quedas",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "O acompanhante NÃO é importante para evitar quedas",
+        "Question": "Na sua opinião, o acompanhante NÃO é importante para evitar quedas?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "Deixar os objetos na mesa ao lado da cama ajuda prevenir quedas",
+        "Question": "Deixar os objetos na mesa ao lado da cama ajuda prevenir quedas. Você entende que é verdadeiro ou falso?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     }

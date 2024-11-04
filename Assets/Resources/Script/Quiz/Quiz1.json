@@ -1,26 +1,26 @@
 [
     {
-        "Question": "O remédio para dormir contribuiu para a ocorrência da queda",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. Você acha que o remédio para dormir contribuiu para a ocorrência da queda?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "O Sr. João deveria ter pedido ajuda para ir ao banheiro",
+        "Question": "Na sua opinião, Senhor João deveria ter pedido ajuda para ir ao banheiro?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "O quarto escuro NÃO contribuiu para a queda",
+        "Question": "O quarto escuro NÃO contribuiu para a queda. Você entende que é verdadeiro ou falso?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "Ascender a luz poderia ter evitado a queda",
+        "Question": "Para você, acender a luz poderia ter evitado a queda?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "O piso molhado NÃO influenciou na queda",
+        "Question": "Verdadeiro ou falso? O piso molhado NÃO influenciou na queda.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     }

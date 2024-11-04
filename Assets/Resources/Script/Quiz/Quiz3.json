@@ -1,26 +1,26 @@
 [
     {
-        "Question": "O curativo na perna NÃO aumenta o risco de Sr. Manoel cair",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. O curativo na perna NÃO aumenta o risco de Sr. Manoel cair.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "O objeto no corredor favoreceu a queda de Sr. Manoel",
+        "Question": "Para você, o objeto no corredor favoreceu a queda de Sr. Manoel?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "A dificuldade de visão NÃO tem relação com a queda",
+        "Question": "A dificuldade de visão NÃO tem relação com a queda. Você entende que é verdadeiro ou falso?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "A presença de barra de segurança ajuda a evitar quedas",
+        "Question": "Na sua opinião, a presença de barra de segurança ajuda a evitar quedas?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "Como Sr. Manoel tem dificuldade para enxergar, precisa utilizar sempre os óculos para evitar uma queda",
+        "Question": "Verdadeiro ou falso? Como Sr. Manoel tem dificuldade para enxergar.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     }

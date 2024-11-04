@@ -50,6 +50,9 @@ public class BingoManager : MonoBehaviour
 
         // Inicia o contador para chamar a função StartAnimation a cada 6 segundos
         InvokeRepeating("AutoStartAnimation", 6f, 6f);
+        PlayAudio(numberSource+"sorteio", () =>
+        {
+        });
     }
 
     // Função para iniciar automaticamente a animação a cada 6 segundos
@@ -126,12 +129,15 @@ public class BingoManager : MonoBehaviour
 
 
         // Verifica se atingiu a quantidade desejada de interações
-        if (availableNumbers.Count == 50 - quantidadeNumerosSorteados + 1)
+        if (availableNumbers.Count == 50 - quantidadeNumerosSorteados)
         {
             Debug.Log("Quantidade desejada de interações foi alcançada!");
             alertaObject.SetActive(true);
             startButton.interactable = false;
-            //Invoke("desativaAlerta", 5f);
+            PlayAudio(numberSource+"ultimabolinha", () =>
+            {
+            });
+            //Invoke("DesativaAlerta", 5f);
         }
     }
 
@@ -193,12 +199,12 @@ public class BingoManager : MonoBehaviour
         onComplete?.Invoke();
     }
 
-    public void desativaAlerta()
+    public void DesativaAlerta()
     {
         alertaObject.SetActive(false);
     }
     
-    public void botaoFinalizacao()
+    public void BotaoFinalizacao()
     {
         alertaObject.SetActive(false);
         Invoke("VerificarVitoria", 15f);
@@ -211,7 +217,32 @@ public class BingoManager : MonoBehaviour
         {
             // Se vitoria for falso, ativar o GameObject chamado "perdeu"
             derrotaObject.SetActive(true);
-            Invoke("VoltarMenu", 10f);
+            PlayAudio(numberSource+"naodeuBINGO", () =>
+            {
+                Invoke("TelaTrofeus", 1f);
+            });
+        }
+    }
+
+    public void TelaTrofeus()
+    {
+        // Desabilite o GameObject "Bingo"
+        bingoObject.SetActive(false);
+        // Habilite o GameObject "Vitoria"
+        vitoriaObject.SetActive(true);
+        if(estrelas>=3)
+        {
+            Color color = bronze.GetComponent<Image>().color;
+            color.a = 255f;
+            bronze.GetComponent<Image>().color = color;
+            if(estrelas>=10)
+            {
+                prata.GetComponent<Image>().color = color;
+                if(estrelas>=20)
+                {
+                    ouro.GetComponent<Image>().color = color;
+                }
+            }
         }
     }
 

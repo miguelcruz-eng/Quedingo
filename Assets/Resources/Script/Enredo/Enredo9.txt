@@ -4,5 +4,5 @@ label start
 show cenario with Fade
 Sev \"Olá Enfermeira Maria! Estou me sentindo mais confortável com as roupas folgadas e sandálias com solado antiderrapante.
 Enf \"Olá Dona Severina! Roupas apertadas, saias muito longas e sapatos com o solado liso aumentam o risco de quedas.
-Sev \"Ainda bem que vocês explicam tudo direitinho pois como eu não sei ler, fico sem saber o que as placas e panfletos dizem. Quero ajudar a prevenir as quedas, mas preciso da ajuda de vocês para entender.
+Sev \"Ainda bem que vocês explicam tudo direitinho pois como eu não sei ler, fico sem saber o que as placas e panfletos dizem. Não quero cair, então preciso da ajuda de vocês para aprender.
 screen cenario with Fade

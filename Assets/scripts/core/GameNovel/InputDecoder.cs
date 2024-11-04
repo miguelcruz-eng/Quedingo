@@ -39,6 +39,7 @@ public class InputDecoder
     public string inputLine;
     public static int CommandLine = 0;
     public static string LastCommand = "";
+    public static int numeroAleatorio;
 
     public static void ParseInputLine(string StringToParse)
     {
@@ -161,6 +162,8 @@ public class InputDecoder
         var matches = ImageToUSe.Match(StringToParse);
         var altMatches = ImageToUseTransition.Match(StringToParse);
 
+        numeroAleatorio = UnityEngine.Random.Range(1, 4);
+
         if(altMatches.Success)
         {
             ImageToShow = altMatches.Groups["ImageFileName"].ToString();
@@ -175,7 +178,7 @@ public class InputDecoder
         PictureInstance.transform.SetParent(canvas.transform, false);
         PictureInstance.GetComponent<ImageInstance>().FadeIn = FadeEffect;
         PictureInstance.GetComponent<Image>().color = Color.white;
-        PictureInstance.GetComponent<Image>().sprite = Resources.Load<Sprite>("images/" + ImageToShow);
+        PictureInstance.GetComponent<Image>().sprite = Resources.Load<Sprite>("images/" + ImageToShow + numeroAleatorio);
 
         GameObject CharInstanceI = GameObject.Instantiate(PI);
         CharInstanceI.transform.SetParent(canvas.transform, false);
@@ -226,7 +229,7 @@ public class InputDecoder
         PictureInstance.transform.SetParent(canvas.transform, false);
         PictureInstance.GetComponent<ImageInstance>().FadeIn = FadeEffect;
         PictureInstance.GetComponent<Image>().color = Color.white;
-        PictureInstance.GetComponent<Image>().sprite = Resources.Load<Sprite>("images/" + ImageToShow);
+        PictureInstance.GetComponent<Image>().sprite = Resources.Load<Sprite>("images/" + ImageToShow + numeroAleatorio);
 
         GameObject CharInstanceI = GameObject.Instantiate(PI);
         CharInstanceI.transform.SetParent(canvas.transform, false);

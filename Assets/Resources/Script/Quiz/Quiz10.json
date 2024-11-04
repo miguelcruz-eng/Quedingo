@@ -1,26 +1,26 @@
 [
     {
-        "Question": "A desorientação de Dona Severina aumenta o risco de quedas",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. A desorientação de Dona Severina aumenta o risco de quedas.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "A desidratação NÃO tem relação com a desorientação e o risco de cair",
+        "Question": "A desidratação NÃO tem relação com a desorientação e o risco de cair. Você entende que é verdadeiro ou falso?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "A família de Dona Severina NÃO deve se envolver na prevenção de quedas pois ela está internada",
+        "Question": "Na sua opinião, A família de Dona Severina NÃO deve se envolver na prevenção de quedas pois ela está internada?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "Os profissionais de saúde devem ter mais atenção para que Dona Severina não caia",
+        "Question": "Verdadeiro ou falso? Os profissionais de saúde devem ter mais atenção para que Dona Severina não caia.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "Os profissionais de saúde e familiares devem agir juntos para prevenir as quedas",
+        "Question": "Para você, os profissionais de saúde e familiares devem agir juntos para prevenir as quedas?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     }

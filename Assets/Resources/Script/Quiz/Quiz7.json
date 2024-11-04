@@ -1,26 +1,26 @@
 [
     {
-        "Question": "O jejum para realizar a cirurgia aumenta o risco de quedas",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. O jejum para realizar a cirurgia aumenta o risco de quedas.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "Após a cirurgia Dona Luzia NÃO está mais em risco de cair",
+        "Question": "Para você, após a cirurgia Dona Luzia não está mais em risco de cair?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "As pessoas com sonda ou drenos apresentam risco elevado para quedas",
+        "Question": "As pessoas com sonda ou drenos apresentam maior risco para quedas. Você entende que é verdadeiro ou falso?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "A sonolência depois da anestesia pode aumentar a chance de cair",
+        "Question": "Verdadeiro ou falso? A sonolência depois da anestesia pode aumentar a chance de cair.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "Dona Luzia pode andar sozinho depois da cirurgia, se estiver acordada",
+        "Question": "Na sua opinião, Dona Luzia pode andar sozinha depois da cirurgia, se estiver acordada?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     }
