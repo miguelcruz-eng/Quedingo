@@ -45,8 +45,8 @@ public class AnswerScript : MonoBehaviour
             quizManager.index = optionIndex + 1;  // Isso faz com que o index varie entre 1 e 2
             quizManager.FalasTxt.text = quizManager.readText(quizManager.feedbackSource + "/F" + quizManager.currentQuestion + "." + quizManager.index);
 
-            quizManager.simImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("images/" + "Certo");
-            quizManager.naoImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("images/" + "Certo");
+            quizManager.simImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("images/" + "joinha");
+            quizManager.naoImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("images/" + "joinha");
             quizManager.points++;
 
             quizManager.Correct();
@@ -56,8 +56,8 @@ public class AnswerScript : MonoBehaviour
             quizManager.index = (optionIndex == 0) ? 1 : 2;  // Isso inverte o valor de index entre 1 e 2
             quizManager.FalasTxt.text = quizManager.readText(quizManager.feedbackSource + "/F" + quizManager.currentQuestion + "." + quizManager.index);
 
-            quizManager.simImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("images/" + "Errado");
-            quizManager.naoImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("images/" + "Errado");
+            quizManager.simImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("images/" + "erro");
+            quizManager.naoImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("images/" + "erro");
 
             quizManager.Correct();
         }
