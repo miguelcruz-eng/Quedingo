@@ -20,7 +20,7 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "Verdadeiro ou falso? Como Sr. Manoel tem dificuldade para enxergar.",
+        "Question": "Verdadeiro ou falso? Como Sr. Manoel tem dificuldade para enxergar, precisa utilizar sempre os óculos para evitar uma queda.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     }

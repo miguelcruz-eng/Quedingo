@@ -15,6 +15,7 @@ public class BingoManager : MonoBehaviour
     public GameObject bingoObject;
     public GameObject alertaObject;
     public GameObject derrotaObject;
+    public GameObject ganhou;
 
     public GameObject bronze;
     public GameObject prata;
@@ -222,6 +223,19 @@ public class BingoManager : MonoBehaviour
                 Invoke("TelaTrofeus", 1f);
             });
         }
+    }
+
+    public void PreTelaTrofeus()
+    {
+        Invoke("TelaTrofeus", 5f);
+    }
+
+    public void Ganhou()
+    {
+        ganhou.SetActive(true);
+        PlayAudio(numberSource+"BINGO-‐-Feito-com-o-Clipchamp", () =>
+        {
+        });
     }
 
     public void TelaTrofeus()

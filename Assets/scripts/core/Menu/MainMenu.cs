@@ -21,6 +21,10 @@ public class MainMenu : MonoBehaviour
     public GameObject prata;
     public GameObject ouro;
     private AudioSource audioSource; // Referência ao componente AudioSource
+    public Button jogar;
+    public Button comoJogar;
+
+    public bool jogarSet, comoSet;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,11 @@ public class MainMenu : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>(); // Cria o componente AudioSource
         LoadTrofeus();
         LoadTimesPlayed();
+        if(timesPlayed == 0) 
+        {
+            comoSet = true;
+            StartCoroutine(Blink());
+        }
     }
 
     // Update is called once per frame
@@ -68,7 +77,7 @@ public class MainMenu : MonoBehaviour
         onComplete?.Invoke();
     }
 
-    public void playButtonAudio()
+    public void PlayButtonAudio()
     {
         // Reproduz o áudio ao clicar no botão
         PlayAudio("Audio/button", () =>
@@ -77,40 +86,33 @@ public class MainMenu : MonoBehaviour
         });
     }
 
-    public void playQuiz()
+    public void PlayQuiz()
     {
         PlayAudio("Audio/button", () =>
         {
-            if(timesPlayed > 0) {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            } else {
-                timesPlayed ++;
-                SaveTimesPlayed();
-                Menu.SetActive(false);
-                Como.SetActive(true);
-                PlayAudio("Audio/instrucoes", () =>
-                {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                });
-            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         });
     }
 
-    public void comoJogar()
+    public void ComoJogar()
     {
         PlayAudio("Audio/button", () =>
         {
+            timesPlayed ++;
+            SaveTimesPlayed();
             Menu.SetActive(false);
             Como.SetActive(true);
             PlayAudio("Audio/instrucoes", () =>
             {
+                jogarSet = true;
+                comoSet = false;
                 Menu.SetActive(true);
                 Como.SetActive(false);
             });
         });
     }
 
-    public void sobreOjogo()
+    public void SobreOjogo()
     {
         PlayAudio("Audio/button", () =>
         {
@@ -119,7 +121,7 @@ public class MainMenu : MonoBehaviour
         });
     }
 
-    public void menuTrofeus()
+    public void MenuTrofeus()
     {
         PlayAudio("Audio/button", () =>
         {
@@ -142,7 +144,7 @@ public class MainMenu : MonoBehaviour
         });
     }
 
-    public void quitGame()
+    public void QuitGame()
     {
         PlayAudio("Audio/button", () =>
         {
@@ -173,5 +175,44 @@ public class MainMenu : MonoBehaviour
     {
         timesPlayed = PlayerPrefs.GetInt("TimesPlayed", 0);
         // Se o valor não existir, será usado o valor padrão (0 no caso)
+    }
+
+    private IEnumerator Blink()
+    {
+        while(comoSet)
+        {
+            SetComoVisible(false);
+            yield return new WaitForSeconds(0.5f);
+            SetComoVisible(true);
+            yield return new WaitForSeconds(0.5f);
+        }
+        while(jogarSet)
+        {
+            SetJogarVisible(false);
+            yield return new WaitForSeconds(0.5f);
+            SetJogarVisible(true);
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    private void SetJogarVisible(bool visible)
+    {
+        var imagem = jogar.GetComponent<Image>();
+       
+
+        Color corAtual = imagem.color;
+        corAtual.a = visible ? 0f : 0.5f;
+
+        imagem.color = corAtual;
+    }
+    private void SetComoVisible(bool visible)
+    {
+        var imagem = comoJogar.GetComponent<Image>();
+       
+
+        Color corAtual = imagem.color;
+        corAtual.a = visible ? 0f : 0.5f;
+
+        imagem.color = corAtual;
     }
 }

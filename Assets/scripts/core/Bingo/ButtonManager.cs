@@ -19,7 +19,7 @@ public class ButtonManager : MonoBehaviour
         InitializeButtons();
         numberOfButtonsToFill = textMeshPros.Count; // Defina a quantidade desejada de botões a serem preenchidos
         AssignRandomOrderedValuesToButtons(numberOfButtonsToFill);
-        bingoManager.quantidadeNumerosSorteados = 25;
+        bingoManager.quantidadeNumerosSorteados = 35;
         foreach (Button button in buttons)
         {   
             button.onClick.AddListener(() => OnButtonClick(button, button.GetComponentInChildren<TextMeshProUGUI>()));
@@ -133,7 +133,9 @@ public class ButtonManager : MonoBehaviour
                 bingoManager.estrelas++;
                 bingoManager.vitoria = true;
 
-                bingoManager.TelaTrofeus();
+                bingoManager.Ganhou();
+
+                bingoManager.PreTelaTrofeus();
             }else
             {
                 numberOfButtonsToFill --;   

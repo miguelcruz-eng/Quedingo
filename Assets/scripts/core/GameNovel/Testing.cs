@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Testing : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class Testing : MonoBehaviour
 
         InputDecoder.Repetir.SetActive(false);
         InputDecoder.Quiz.SetActive(false);
+
+        StartCoroutine(Blink());
 
         InputDecoder.labels = new List<Label>();
 
@@ -154,6 +157,30 @@ public class Testing : MonoBehaviour
                 setinha();
             });
         });
+    }
+
+    private static IEnumerator Blink()
+    {
+        while(InputDecoder.quizSet)
+        {
+            SetQuizVisible(false);
+            yield return new WaitForSeconds(0.5f);
+            SetQuizVisible(true);
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    private static void SetQuizVisible(bool visible)
+    {
+        var filhos = InputDecoder.Quiz.GetComponentsInChildren<Image>();
+
+        foreach (var imagem in filhos)
+        {
+            if (imagem.gameObject == InputDecoder.Quiz) continue; // Ignora o pai
+            Color corAtual = imagem.color;
+            corAtual.a = visible ? 0.5f : 1f;
+            imagem.color = corAtual;
+        }
     }
     
     public void goQuiz()

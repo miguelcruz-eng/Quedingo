@@ -13,6 +13,7 @@ public class InputDecoder
 {
     public static List<Character> CharacterList = new List<Character> ();
     public static bool PausedHere = false;
+    public static bool quizSet = true;
 
     public static GameObject InterfaceElements;
 

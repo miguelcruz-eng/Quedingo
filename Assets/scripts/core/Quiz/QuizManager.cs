@@ -141,6 +141,7 @@ public class QuizManager : MonoBehaviour
 
     void generateQuestion()
     {
+        bool concluido = false;
         if(currentQuestion<QnA.Count)
         {
             QuestionTxt.text = QnA[currentQuestion].Question;
@@ -172,24 +173,85 @@ public class QuizManager : MonoBehaviour
                     atencao.SetActive(false);
                     bingo.SetActive(true);
                 }
-                if(points >= 3)
+
+                int statusEstrela = PlayerPrefs.GetInt("statusEstrela", 0);
+
+                if (points >= 3)
                 {
-                    Color color = estrela1.GetComponent<Image>().color;
-                    color.a = 255f;
-                    estrela1.GetComponent<Image>().color = color;
-                    if(points >= 4)
+                    // Incrementa a variável de status
+                    statusEstrela++;
+                    PlayerPrefs.SetInt("statusEstrela", statusEstrela);
+                    PlayerPrefs.Save();
+
+                    // Define a cor desejada com opacidade total (alpha = 1)
+                    Color color = new Color(1f, 1f, 1f, 1f);
+
+                    // Verifica qual estrela atualizar com base no status
+                    if (statusEstrela >= 1)
                     {
-                        estrela2.GetComponent<Image>().color = color;
+                        // Atualiza as imagens dos filhos da estrela1
+                        foreach (Transform child in estrela1.transform)
+                        {
+                            var image = child.GetComponent<Image>();
+                            if (image != null)
+                            {
+                                image.color = color;
+                            }
+                        }
                     }
-                    if(points >= 5)
+                    if (statusEstrela >= 2)
                     {
-                        jogar.SetActive(true);
-                        estrela3.GetComponent<Image>().color = color;
+                        // Atualiza as imagens dos filhos da estrela2
+                        foreach (Transform child in estrela2.transform)
+                        {
+                            var image = child.GetComponent<Image>();
+                            if (image != null)
+                            {
+                                image.color = color;
+                            }
+                        }
+                    }
+                    if (statusEstrela >= 3)
+                    {
+                        // Atualiza as imagens dos filhos da estrela3
+                        foreach (Transform child in estrela3.transform)
+                        {
+                            var image = child.GetComponent<Image>();
+                            if (image != null)
+                            {
+                                image.color = color;
+                            }
+                        }
+                        
+                        concluido = true;
+
+                        // Reseta o status para zero
+                        statusEstrela = 0;
+                        PlayerPrefs.SetInt("statusEstrela", statusEstrela);
+                        PlayerPrefs.Save();
                     }
                 }
+                AtivaBingo(concluido);
             });
         }
-        
+    }
+
+    public void AtivaBingo(bool concluido)
+    {
+        if(concluido)
+            {
+                PlayAudio("Audio/CARTELA_LIBERADA", () =>
+                {
+                    // Ativa o botão ou outro objeto
+                    jogar.SetActive(true);
+                });
+            }
+            else
+            {
+                PlayAudio("Audio/CARTELA_NAO_LIBERADA", () =>
+                {
+                });
+            }
     }
 
     public void playBingo()
