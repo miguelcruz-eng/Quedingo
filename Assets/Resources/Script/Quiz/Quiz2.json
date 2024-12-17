@@ -5,7 +5,7 @@
         "CorrectAnswer": 2
     },
     {
-        "Question": "Para você, estar no hospital, que é ambiente novo para Dona Severina, aumenta o risco de quedas?",
+        "Question": "Estar no hospital, que é ambiente novo para Dona Severina, aumenta o risco de quedas?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
@@ -20,7 +20,7 @@
         "CorrectAnswer": 2
     },
     {
-        "Question": "Deixar os objetos na mesa ao lado da cama ajuda prevenir quedas. Você entende que é verdadeiro ou falso?",
+        "Question": "Deixar os objetos na mesa ao lado da cama ajuda prevenir quedas. Você entende que essa afirmação é verdadeira ou falsa?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     }

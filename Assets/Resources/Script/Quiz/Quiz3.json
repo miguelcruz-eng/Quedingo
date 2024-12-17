@@ -1,11 +1,11 @@
 [
     {
-        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. O curativo na perna NÃO aumenta o risco de Sr. Manoel cair.",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. O curativo na perna NÃO aumenta o risco do Sr. Manoel cair.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "Para você, o objeto no corredor favoreceu a queda de Sr. Manoel?",
+        "Question": "Para você, o objeto no corredor favoreceu a queda do Sr. Manoel?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },

@@ -2,9 +2,9 @@ Character(Enf, Enfermeira, color=green, image=enfermeira)
 Character(Luz, Luzia, color=yellow, image=luzia)
 label start
 show cenario with Fade
-Enf \"Bom dia, Dona Luzia!  Como está se recuperando depois da queda de ontem?
-Luz \"Bom dia Maria, estou bem. Fiquei com medo de andar depois de ter tropeçado no fio do ventilador.
-Enf \"Percebi que a senhora está andando menos, passa muito tempo na cama ou na cadeira.
-Luz \"Vou evitar andar agora, ainda mais depois que colocaram o soro. Os quartos tem pouco espaço para andar também, então prefiro ficar na cama.
-Enf \"O medo pode aumentar ainda mais o risco de cair. Lembre-se que a equipe de saúde pode lhe ajudar a ficar mais confiante, mesmo com o soro.
+Enf \"Bom dia, Dona Luzia!  Como a senhora está se recuperando depois da queda de ontem?
+Luz \"Bom dia enfermeira Maria, estou bem. Fiquei com medo de andar depois de ter tropeçado no fio do ventilador. 
+Enf \"Percebi que a senhora está andando menos e passado muito tempo na cama ou na cadeira.
+Luz \"É que vou evitar andar agora, ainda mais depois que colocaram o soro. Os quartos tem pouco espaço para andar também, então prefiro ficar na cama.
+Enf \"Ah, Dona Luzia, o medo pode aumentar ainda mais o risco de cair. Lembre-se que a equipe de saúde pode lhe ajudar a ficar mais confiante, mesmo com o soro.
 screen cenario with Fade

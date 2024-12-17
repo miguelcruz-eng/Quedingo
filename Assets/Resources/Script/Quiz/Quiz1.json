@@ -5,12 +5,12 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "Na sua opinião, Senhor João deveria ter pedido ajuda para ir ao banheiro?",
+        "Question": "Na sua opinião, o Senhor João deveria ter pedido ajuda para ir ao banheiro?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "O quarto escuro NÃO contribuiu para a queda. Você entende que é verdadeiro ou falso?",
+        "Question": "O fato do quarto estar escuro não tem nenhuma relação com a queda do Sr João. Você entende que é verdadeiro ou falso?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },

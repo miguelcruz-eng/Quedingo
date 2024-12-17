@@ -2,10 +2,10 @@ Character(Doc, Doutor, color=red, image=MEDICO)
 Character(Fis, Fisioterapeuta, color=yellow, image=fisio)
 label start
 show cenario with Fade
-Doc \"Olá Sergio! Percebi que Sr. Antônio está andando com menos dificuldade.
+Doc \"Olá fisioterapeuta Sergio! Percebi que Sr. Antônio está andando com menos dificuldade.
 Fis \"Isso mesmo, ele está fazendo fisioterapia todos os dias. Como ele sofreu outras quedas em casa, precisa ter mais atenção. 
 Doc \"Quando ele chegou estava desnutrido, mas agora está se alimentando melhor com o acompanhamento da nutricionista e recuperando o peso ideal. 
 Doc \"Então acredito que vai conseguir andar com mais segurança.
 Fis \"É verdade, as dores nas articulações também melhoraram depois que iniciou o tratamento com a equipe multiprofissional. 
-Fis \"Isso está ajudando muito, pois ele tem mais disposição para andar e sente menos dor também.
+Fis \"Ele  já está com  mais disposição para andar e sente menos dor também.
 screen cenario with Fade
