@@ -32,10 +32,8 @@ public class QuizManager : MonoBehaviour
     public GameObject atencao;
     public GameObject bingo;
     public GameObject jogar;
-    public GameObject estrela1;
-    public GameObject estrela2;
-    public GameObject estrela3;
-    
+    public GameObject cartela; 
+    public GameObject contJogo;   
 
     private AudioSource audioSource; // Referência ao componente AudioSource
     public string conclusaoSource;
@@ -49,6 +47,7 @@ public class QuizManager : MonoBehaviour
     {
         audioSource = gameObject.AddComponent<AudioSource>(); // Cria o componente AudioSource
         generateQuestion();
+        StartCoroutine(Blink());
     }
 
     public void PlayAudio(string audioFilePath, System.Action onComplete = null)
@@ -113,6 +112,30 @@ public class QuizManager : MonoBehaviour
             //QnA.RemoveAt(currentQuestion);
             generateQuestion();
         });
+    }
+
+    private IEnumerator Blink()
+    {
+        while(true)
+        {
+            SetQuizVisible(false);
+            yield return new WaitForSeconds(0.5f);
+            SetQuizVisible(true);
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    private void SetQuizVisible(bool visible)
+    {
+        var filhos = contJogo.GetComponentsInChildren<Image>();
+
+        foreach (var imagem in filhos)
+        {
+            if (imagem.gameObject == contJogo) continue; // Ignora o pai
+            Color corAtual = imagem.color;
+            corAtual.a = visible ? 0.5f : 1f;
+            imagem.color = corAtual;
+        }
     }
 
     public void replayQuiz()
@@ -183,46 +206,16 @@ public class QuizManager : MonoBehaviour
                     PlayerPrefs.SetInt("statusEstrela", statusEstrela);
                     PlayerPrefs.Save();
 
-                    // Define a cor desejada com opacidade total (alpha = 1)
-                    Color color = new Color(1f, 1f, 1f, 1f);
+                    // Atualiza a imagem do objeto cartela com base no status
+                    Image cartelaImage = cartela.GetComponent<Image>();
 
-                    // Verifica qual estrela atualizar com base no status
-                    if (statusEstrela >= 1)
-                    {
-                        // Atualiza as imagens dos filhos da estrela1
-                        foreach (Transform child in estrela1.transform)
-                        {
-                            var image = child.GetComponent<Image>();
-                            if (image != null)
-                            {
-                                image.color = color;
-                            }
-                        }
-                    }
-                    if (statusEstrela >= 2)
-                    {
-                        // Atualiza as imagens dos filhos da estrela2
-                        foreach (Transform child in estrela2.transform)
-                        {
-                            var image = child.GetComponent<Image>();
-                            if (image != null)
-                            {
-                                image.color = color;
-                            }
-                        }
-                    }
+                    string spritePath = "images/cartela_" + statusEstrela;
+                    Sprite novaImagem = Resources.Load<Sprite>(spritePath);
+
+                    cartelaImage.sprite = novaImagem;
+
                     if (statusEstrela >= 3)
                     {
-                        // Atualiza as imagens dos filhos da estrela3
-                        foreach (Transform child in estrela3.transform)
-                        {
-                            var image = child.GetComponent<Image>();
-                            if (image != null)
-                            {
-                                image.color = color;
-                            }
-                        }
-                        
                         concluido = true;
 
                         // Reseta o status para zero

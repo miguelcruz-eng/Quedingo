@@ -95,9 +95,13 @@ public class BingoManager : MonoBehaviour
 
     private void StartAnimation()
     {
-        if (availableNumbers.Count == 50 - quantidadeNumerosSorteados)
+        int U = 50; // Total de números disponíveis (ajuste conforme necessário)
+        int C = 50 - availableNumbers.Count; // Quantidade de números sorteados
+        int S = U - C - 10; // Fórmula: U - C - 10 = S
+
+        if (S <= 0)
         {
-            // Se não houver mais números disponíveis, encerre as interações
+            // Se a fórmula resultou em S <= 0, todas as interações foram concluídas
             Debug.Log("Todas as interações foram concluídas!");
             return;
         }
@@ -110,13 +114,14 @@ public class BingoManager : MonoBehaviour
         // Remove o número sorteado da lista
         availableNumbers.RemoveAt(randomIndex);
 
-        // Obtém o componente TextMeshPro filho de images[0]
+        // Obtém o componente TextMeshPro filho de images[3]
         TextMeshProUGUI textMeshPro = imageManager.images[3].GetComponentInChildren<TextMeshProUGUI>();
 
         // Atualiza o texto com o número sorteado
         textMeshPro.text = "" + selectedNumber;
 
-        PlayAudio(numberSource+selectedNumber, () =>
+        // Toca o áudio associado ao número
+        PlayAudio(numberSource + selectedNumber, () =>
         {
         });
 
@@ -128,17 +133,16 @@ public class BingoManager : MonoBehaviour
         // Chama a função de animação no ImageManager
         StartCoroutine(imageManager.MoveImages());
 
-
-        // Verifica se atingiu a quantidade desejada de interações
-        if (availableNumbers.Count == 50 - quantidadeNumerosSorteados)
+        // Verifica se o bingo deve ser encerrado com base na fórmula
+        if (S == 0 || availableNumbers.Count == 50 - quantidadeNumerosSorteados)
         {
             Debug.Log("Quantidade desejada de interações foi alcançada!");
             alertaObject.SetActive(true);
             startButton.interactable = false;
-            PlayAudio(numberSource+"ultimabolinha", () =>
+
+            PlayAudio(numberSource + "ultimabolinha", () =>
             {
             });
-            //Invoke("DesativaAlerta", 5f);
         }
     }
 

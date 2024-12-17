@@ -20,7 +20,7 @@
         "CorrectAnswer": 2
     },
     {
-        "Question": "Dona Severina não precisa pedir ajuda para andar pois as pernas estão menos inchadas. Você entende que é verdadeiro ou falso?",
+        "Question": "Dona Severina não precisa pedir ajuda para andar pois as pernas estão menos inchadas. Você entende que isso é verdadeiro ou falso?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     }

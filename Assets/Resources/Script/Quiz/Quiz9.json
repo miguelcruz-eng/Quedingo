@@ -1,6 +1,6 @@
 [
     {
-        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. O sapato com solado antiderrapante ajuda a evitar que Dona Severina escorregue.",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. A desorientação de Dona Severina aumenta o risco dela cair.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },

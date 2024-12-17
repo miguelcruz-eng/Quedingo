@@ -2,9 +2,9 @@ Character(Enf, Enfermeira, color=green, image=enfermeira)
 Character(luz, Luzia, color=yellow, image=luzia)
 label start
 show cenario with Fade
-Enf \" Olá Dona Luzia! Hoje é o dia da cirurgia, a Sra. está de jejum?
-luz \"Olá Enfermeira! Estou de jejum sim, não tomei o café da manhã. 
-Enf \"Certo! Caso sinta alguma tontura, nos avise.
-Enf \"Lembre-se que quando voltar da cirurgia pode estar com sono, sentir fraqueza nas pernas e tontura. Então não tente andar sem ajuda para não cair.
+Enf \"Olá Dona Luzia! Hoje é o dia da sua cirurgia. A Senhora está em jejum?
+luz \"Olá Enfermeira! Estou em jejum sim. Não tomei o café da manhã. 
+Enf \"Entendi! Caso sinta alguma tontura, nos avise.
+Enf \"Lembre-se que quando voltar da cirurgia a senhora pode estar com sono, sentir fraqueza nas pernas e tontura. Então não tente andar sem ajuda para não cair.
 luz \"Tudo bem, vou seguir as orientações.
 screen cenario with Fade

@@ -35,8 +35,11 @@ public class MainMenu : MonoBehaviour
         if(timesPlayed == 0) 
         {
             comoSet = true;
-            StartCoroutine(Blink());
+        }else
+        {
+            jogarSet = true;
         }
+        StartCoroutine(Blink());
     }
 
     // Update is called once per frame

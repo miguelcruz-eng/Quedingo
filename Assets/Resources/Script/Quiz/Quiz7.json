@@ -10,17 +10,17 @@
         "CorrectAnswer": 2
     },
     {
-        "Question": "As pessoas com sonda ou drenos apresentam maior risco para quedas. Você entende que é verdadeiro ou falso?",
+        "Question": "As pessoas com sonda ou drenos apresentam maior risco para quedas. Você entende que isso é verdadeiro ou falso?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "Verdadeiro ou falso? A sonolência depois da anestesia pode aumentar a chance de cair.",
+        "Question": "A sonolência depois da anestesia pode aumentar a chance de cair?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "Na sua opinião, Dona Luzia pode andar sozinha depois da cirurgia, se estiver acordada?",
+        "Question": "Na sua opinião, Dona Luzia pode andar sozinha depois da cirurgia?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     }

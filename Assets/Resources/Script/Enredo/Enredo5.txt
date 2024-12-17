@@ -7,5 +7,5 @@ Fis \"Isso mesmo, ele está fazendo fisioterapia todos os dias. Como ele sofreu 
 Doc \"Quando ele chegou estava desnutrido, mas agora está se alimentando melhor com o acompanhamento da nutricionista e recuperando o peso ideal. 
 Doc \"Então acredito que vai conseguir andar com mais segurança.
 Fis \"É verdade, as dores nas articulações também melhoraram depois que iniciou o tratamento com a equipe multiprofissional. 
-Fis \"Ele  já está com  mais disposição para andar e sente menos dor também.
+Fis \"Ele já está com  mais disposição para andar e sente menos dor também.
 screen cenario with Fade

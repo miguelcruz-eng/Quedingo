@@ -15,12 +15,12 @@
         "CorrectAnswer": 2
     },
     {
-        "Question": "Verdadeiro ou falso? Os profissionais de saúde devem ter mais atenção para que Dona Severina não caia.",
+        "Question": "Verdadeiro ou falso? Os profissionais de saúde colaboram para que Dona Severina não caia.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "Para você, os profissionais de saúde e familiares devem agir juntos para prevenir as quedas?",
+        "Question": "Para você, os profissionais de saúde e os familiares devem agir juntos para prevenir as quedas?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     }
