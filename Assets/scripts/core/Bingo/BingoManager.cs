@@ -16,15 +16,12 @@ public class BingoManager : MonoBehaviour
     public GameObject alertaObject;
     public GameObject derrotaObject;
     public GameObject ganhou;
-
-    public GameObject bronze;
-    public GameObject prata;
-    public GameObject ouro;
+    public GameObject trofeusObject;
 
     private List<int> availableNumbers = new List<int>();
     public List<int> selectedNumbers = new List<int>(); // Lista para armazenar os números sorteados
     public int selectedNumber;
-    public int quantidadeNumerosSorteados = 24; // Defina a quantidade desejada de números sorteados
+    public int quantidadeNumerosSorteados = 25; // Defina a quantidade desejada de números sorteados
     public int estrelas;
     public bool vitoria = false;
 
@@ -97,9 +94,11 @@ public class BingoManager : MonoBehaviour
     {
         int U = 50; // Total de números disponíveis (ajuste conforme necessário)
         int C = 50 - availableNumbers.Count; // Quantidade de números sorteados
-        int S = U - C - 10; // Fórmula: U - C - 10 = S
+        int S = U - C - 25; // Fórmula: U - C - 10 = S
 
-        if (S <= 0)
+        Debug.Log("valor de s" + S);
+
+        if (S <= 0 || vitoria)
         {
             // Se a fórmula resultou em S <= 0, todas as interações foram concluídas
             Debug.Log("Todas as interações foram concluídas!");
@@ -134,7 +133,7 @@ public class BingoManager : MonoBehaviour
         StartCoroutine(imageManager.MoveImages());
 
         // Verifica se o bingo deve ser encerrado com base na fórmula
-        if (S == 0 || availableNumbers.Count == 50 - quantidadeNumerosSorteados)
+        if (S == 1) //|| availableNumbers.Count == 50 - quantidadeNumerosSorteados)
         {
             Debug.Log("Quantidade desejada de interações foi alcançada!");
             alertaObject.SetActive(true);
@@ -244,25 +243,83 @@ public class BingoManager : MonoBehaviour
 
     public void TelaTrofeus()
     {
-        // Desabilite o GameObject "Bingo"
+        // Desabilitar "Bingo" e habilitar "Vitoria"
         bingoObject.SetActive(false);
-        // Habilite o GameObject "Vitoria"
         vitoriaObject.SetActive(true);
-        if(estrelas>=3)
+
+        // // Tentar converter estrelas para um número inteiro
+        // if (!int.TryParse(estrelas, out int estrelasInt))
+        // {
+        //     Debug.LogError($"Valor inválido para estrelas: {estrelas}");
+        //     return;
+        // }
+
+        // Atualiza a imagem do trofeu com base no número de estrelas
+        string spritePath = GetSpritePathForStars(estrelas);
+        Sprite novaImagem = Resources.Load<Sprite>(spritePath);
+        Image vitoriaImage = trofeusObject.GetComponent<Image>();
+
+        if (novaImagem != null)
         {
-            Color color = bronze.GetComponent<Image>().color;
-            color.a = 255f;
-            bronze.GetComponent<Image>().color = color;
-            if(estrelas>=10)
-            {
-                prata.GetComponent<Image>().color = color;
-                if(estrelas>=20)
-                {
-                    ouro.GetComponent<Image>().color = color;
-                }
-            }
+            vitoriaImage.sprite = novaImagem;
+        }
+        else
+        {
+            Debug.LogWarning($"Sprite não encontrado no caminho: {spritePath}");
+        }
+
+        // Tocar áudio correspondente
+        PlayAudioForStars(estrelas);
+    }
+
+    private string GetSpritePathForStars(int estrelas)
+    {
+        if (estrelas >= 1 && estrelas <= 3)
+        {
+            return $"images/BRONZE_0{estrelas}";
+        }
+        else if (estrelas >= 4 && estrelas <= 6)
+        {
+            return $"images/PRATA_0{estrelas - 3}";
+        }
+        else if (estrelas >= 7 && estrelas <= 8)
+        {
+            return $"images/OURO_0{estrelas - 6}";
+        }
+        else if (estrelas >= 9)
+        {
+            return "images/OURO_03";
+        }
+        else
+        {
+            return "images/0SEM_TROFEU";
         }
     }
+
+    private void PlayAudioForStars(int estrelas)
+    {
+        if (estrelas >= 1 && estrelas <= 3)
+        {
+            PlayAudio(estrelas == 3 ? numberSource + "bronze" : numberSource + "sem-trofeu", null);
+        }
+        else if (estrelas >= 4 && estrelas <= 6)
+        {
+            PlayAudio(estrelas == 6 ? numberSource + "prata" : numberSource + "mais-trofeus", null);
+        }
+        else if (estrelas >= 7 && estrelas <= 8)
+        {
+            PlayAudio(numberSource + "mais-trofeus", null);
+        }
+        else if (estrelas >= 9)
+        {
+            PlayAudio(numberSource + "ouro", null);
+        }
+        else
+        {
+            PlayAudio(numberSource + "sem-trofeu", null);
+        }
+    }
+
 
     // Função chamada quando o botão é pressionado
     // Função chamada quando o botão é pressionado

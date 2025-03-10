@@ -1,6 +1,6 @@
 [
     {
-        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. As pessoas que já caíram têm maior chance de cair novamente.",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. Pessoas que já caíram têm maior chance de cair novamente.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },

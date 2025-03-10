@@ -17,9 +17,8 @@ public class ButtonManager : MonoBehaviour
     private void Start()
     {
         InitializeButtons();
-        numberOfButtonsToFill = textMeshPros.Count; // Defina a quantidade desejada de botões a serem preenchidos
-        AssignRandomOrderedValuesToButtons(numberOfButtonsToFill);
-        bingoManager.quantidadeNumerosSorteados = 35;
+        AssignRandomOrderedValuesToColumns();
+        bingoManager.quantidadeNumerosSorteados = 25;
         foreach (Button button in buttons)
         {   
             button.onClick.AddListener(() => OnButtonClick(button, button.GetComponentInChildren<TextMeshProUGUI>()));
@@ -48,18 +47,30 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-    private void AssignRandomOrderedValuesToButtons(int numberOfButtons)
+    private void AssignRandomOrderedValuesToColumns()
     {
-        // Gera números aleatórios únicos entre 1 e 50
-        List<int> randomValues = GenerateUniqueRandomValues(1, 50, numberOfButtons);
-
-        // Ordena os valores em ordem crescente
-        randomValues.Sort();
-
-        // Preenche os TextMeshPro dos botões ímpares com os valores em ordem crescente
-        for (int i = 0; i < textMeshPros.Count; i++)
+        // Define os intervalos para cada coluna
+        Dictionary<string, (int, int)> columnRanges = new Dictionary<string, (int, int)>
         {
-            textMeshPros[i].text = randomValues[i].ToString();
+            { "B", (1, 10) },
+            { "I", (11, 20) },
+            { "N", (21, 30) },
+            { "G", (31, 40) },
+            { "O", (41, 50) }
+        };
+
+        // Itera pelas colunas e preenche os botões correspondentes
+        int buttonIndex = 0;
+        foreach (var range in columnRanges.Values)
+        {
+            List<int> randomValues = GenerateUniqueRandomValues(range.Item1, range.Item2, 5);
+            randomValues.Sort(); // Ordena os valores
+
+            for (int i = 0; i < randomValues.Count; i++)
+            {
+                textMeshPros[buttonIndex].text = randomValues[i].ToString();
+                buttonIndex++;
+            }
         }
     }
 
@@ -127,7 +138,7 @@ public class ButtonManager : MonoBehaviour
             // Desabilita o botão
             button.interactable = false;
 
-            if(numberOfButtonsToFill <= 1 || AreSpecificButtonsDisabled())
+            if(AreSpecificButtonsDisabled())
             {
                 Debug.Log("Voce venceu!");
                 bingoManager.estrelas++;
@@ -136,11 +147,7 @@ public class ButtonManager : MonoBehaviour
                 bingoManager.Ganhou();
 
                 bingoManager.PreTelaTrofeus();
-            }else
-            {
-                numberOfButtonsToFill --;   
             }
-            Debug.Log(numberOfButtonsToFill);
         }
     }
 

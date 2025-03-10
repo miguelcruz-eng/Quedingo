@@ -17,12 +17,12 @@ public class MainMenu : MonoBehaviour
     public GameObject Trophy;
     public int trofeus;
     public int timesPlayed;
-    public GameObject bronze;
-    public GameObject prata;
-    public GameObject ouro;
+    public GameObject trofeusObject;
     private AudioSource audioSource; // Referência ao componente AudioSource
     public Button jogar;
     public Button comoJogar;
+
+    private string numberSource;
 
     public bool jogarSet, comoSet;
 
@@ -30,6 +30,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>(); // Cria o componente AudioSource
+        numberSource = "Audio/BINGO/";
         LoadTrofeus();
         LoadTimesPlayed();
         if(timesPlayed == 0) 
@@ -130,21 +131,72 @@ public class MainMenu : MonoBehaviour
         {
             Menu.SetActive(false);
             Trophy.SetActive(true);
-            if(trofeus>=3)
+
+            // Atualiza a imagem do objeto cartela com base no número de estrelas
+            string spritePath = GetSpritePathForStars(trofeus);
+            Sprite novaImagem = Resources.Load<Sprite>(spritePath);
+            Image trofeuImage = trofeusObject.GetComponent<Image>();
+
+            if (novaImagem != null)
             {
-                Color color = bronze.GetComponent<Image>().color;
-                color.a = 255f;
-                bronze.GetComponent<Image>().color = color;
-                if(trofeus>=10)
-                {
-                    prata.GetComponent<Image>().color = color;
-                    if(trofeus>=20)
-                    {
-                        ouro.GetComponent<Image>().color = color;
-                    }
-                }
+                trofeuImage.sprite = novaImagem;
             }
+            else
+            {
+                Debug.LogWarning($"Sprite não encontrado no caminho: {spritePath}");
+            }
+
+            // Tocar áudio correspondente
+            PlayAudioForStars(trofeus);
         });
+    }
+
+    private string GetSpritePathForStars(int estrelas)
+    {
+        if (estrelas >= 1 && estrelas <= 3)
+        {
+            return $"images/BRONZE_0{estrelas}";
+        }
+        else if (estrelas >= 4 && estrelas <= 6)
+        {
+            return $"images/PRATA_0{estrelas - 3}";
+        }
+        else if (estrelas >= 7 && estrelas <= 8)
+        {
+            return $"images/OURO_0{estrelas - 6}";
+        }
+        else if (estrelas >= 9)
+        {
+            return "images/OURO_03";
+        }
+        else
+        {
+            return "images/0SEM_TROFEU";
+        }
+    }
+
+    private void PlayAudioForStars(int estrelas)
+    {
+        if (estrelas >= 1 && estrelas <= 3)
+        {
+            PlayAudio(estrelas == 3 ? numberSource + "bronze" : numberSource + "sem-trofeu", null);
+        }
+        else if (estrelas >= 4 && estrelas <= 6)
+        {
+            PlayAudio(estrelas == 6 ? numberSource + "prata" : numberSource + "mais-trofeus", null);
+        }
+        else if (estrelas >= 7 && estrelas <= 8)
+        {
+            PlayAudio(numberSource + "mais-trofeus", null);
+        }
+        else if (estrelas >= 9)
+        {
+            PlayAudio(numberSource + "ouro", null);
+        }
+        else
+        {
+            PlayAudio(numberSource + "sem-trofeu", null);
+        }
     }
 
     public void QuitGame()

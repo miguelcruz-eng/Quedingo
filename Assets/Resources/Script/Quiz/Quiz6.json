@@ -1,26 +1,26 @@
 [
     {
-        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. O jejum para o exame aumenta o risco do Sr. Manoel cair.",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. O jejum para o exame aumenta o risco do Sr. João cair.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "Para você, como o Sr. Manoel tem diabetes e pressão alta, o seu risco de cair é maior?",
+        "Question": "Para você, como o Sr. João tem diabetes e pressão alta, o seu risco de cair é maior?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
     {
-        "Question": "O Sr. Manoel NÃO precisa se preocupar com os remédios de pressão pois eles não interferem nas quedas. Você entende que isso é verdadeiro ou falso?",
+        "Question": "O Sr. João NÃO precisa se preocupar com os remédios de pressão pois eles NÃO interferem nas quedas. Você entende que isso é verdadeiro ou falso?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "Agora diga se é Verdadeiro ou falso? A altura da cama pode ser mantida elevada para prevenir quedas?",
+        "Question": "Agora diga se é Verdadeiro ou Falso? A altura da cama pode ser mantida elevada para prevenir quedas?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
     {
-        "Question": "Na sua opinião, as grades da cama devem estar sempre baixas porque Sr. Manoel pode querer levantar a qualquer momento?",
+        "Question": "Na sua opinião, as grades da cama devem estar sempre baixas porque Sr. João pode querer levantar a qualquer momento?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     }

@@ -15,7 +15,10 @@ public class QuizManager : MonoBehaviour
     public GameObject[] options;
     public int currentQuestion;
     public bool selector;
+    bool jogando = true;
+    bool concluido = false;
     public int points;
+    int statusEstrela;
 
     public TextMeshProUGUI AtencaoTxt;
     public TextMeshProUGUI AtencaoTitulo;
@@ -32,6 +35,7 @@ public class QuizManager : MonoBehaviour
     public GameObject atencao;
     public GameObject bingo;
     public GameObject jogar;
+    public GameObject jogar2;
     public GameObject cartela; 
     public GameObject contJogo;   
 
@@ -48,6 +52,7 @@ public class QuizManager : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>(); // Cria o componente AudioSource
         generateQuestion();
         StartCoroutine(Blink());
+        statusEstrela = PlayerPrefs.GetInt("statusEstrela", 0);
     }
 
     public void PlayAudio(string audioFilePath, System.Action onComplete = null)
@@ -116,11 +121,25 @@ public class QuizManager : MonoBehaviour
 
     private IEnumerator Blink()
     {
-        while(true)
+        while(jogando)
         {
             SetQuizVisible(false);
             yield return new WaitForSeconds(0.5f);
             SetQuizVisible(true);
+            yield return new WaitForSeconds(0.5f);
+        }
+        while(concluido)
+        {
+            SetJogarVisible(false);
+            yield return new WaitForSeconds(0.5f);
+            SetJogarVisible(true);
+            yield return new WaitForSeconds(0.5f);
+        }
+        while(true)
+        {
+            SetContinuarVisible(false);
+            yield return new WaitForSeconds(0.5f);
+            SetContinuarVisible(true);
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -128,6 +147,29 @@ public class QuizManager : MonoBehaviour
     private void SetQuizVisible(bool visible)
     {
         var filhos = contJogo.GetComponentsInChildren<Image>();
+
+        foreach (var imagem in filhos)
+        {
+            if (imagem.gameObject == contJogo) continue; // Ignora o pai
+            Color corAtual = imagem.color;
+            corAtual.a = visible ? 0.5f : 1f;
+            imagem.color = corAtual;
+        }
+    }
+
+    private void SetJogarVisible(bool visible)
+    {
+        var imagem = jogar.GetComponent<Image>();
+       
+        Color corAtual = imagem.color;
+        corAtual.a = visible ? 0f : 0.5f;
+
+        imagem.color = corAtual;
+    }
+
+    private void SetContinuarVisible(bool visible)
+    {
+        var filhos = jogar2.GetComponentsInChildren<Image>();
 
         foreach (var imagem in filhos)
         {
@@ -164,7 +206,6 @@ public class QuizManager : MonoBehaviour
 
     void generateQuestion()
     {
-        bool concluido = false;
         if(currentQuestion<QnA.Count)
         {
             QuestionTxt.text = QnA[currentQuestion].Question;
@@ -187,63 +228,75 @@ public class QuizManager : MonoBehaviour
                     AtencaoTxt.text = fileContent;
                     PlayAudio("Audio/"+conclusaoSource+".1", () =>
                     {
-                        atencao.SetActive(false);
-                        bingo.SetActive(true);
+                        AtivaBingo();
                     });
                 }
                 else
                 {
-                    atencao.SetActive(false);
-                    bingo.SetActive(true);
+                    AtivaBingo();
                 }
-
-                int statusEstrela = PlayerPrefs.GetInt("statusEstrela", 0);
-
-                if (points >= 3)
-                {
-                    // Incrementa a variável de status
-                    statusEstrela++;
-                    PlayerPrefs.SetInt("statusEstrela", statusEstrela);
-                    PlayerPrefs.Save();
-
-                    // Atualiza a imagem do objeto cartela com base no status
-                    Image cartelaImage = cartela.GetComponent<Image>();
-
-                    string spritePath = "images/cartela_" + statusEstrela;
-                    Sprite novaImagem = Resources.Load<Sprite>(spritePath);
-
-                    cartelaImage.sprite = novaImagem;
-
-                    if (statusEstrela >= 3)
-                    {
-                        concluido = true;
-
-                        // Reseta o status para zero
-                        statusEstrela = 0;
-                        PlayerPrefs.SetInt("statusEstrela", statusEstrela);
-                        PlayerPrefs.Save();
-                    }
-                }
-                AtivaBingo(concluido);
             });
         }
     }
 
-    public void AtivaBingo(bool concluido)
+    public void AtivaBingo()
     {
+        atencao.SetActive(false);
+        bingo.SetActive(true);
+
+        // Atualiza a imagem do objeto cartela com base no status
+        Image cartelaImage = cartela.GetComponent<Image>();
+
+        string spritePath = "images/cartela_" + statusEstrela;
+        Sprite novaImagem = Resources.Load<Sprite>(spritePath);
+
+        cartelaImage.sprite = novaImagem;
+
+        if (points >= 3)
+        {
+            // Incrementa a variável de status
+            statusEstrela++;
+            PlayerPrefs.SetInt("statusEstrela", statusEstrela);
+            PlayerPrefs.Save();
+
+            spritePath = "images/cartela_" + statusEstrela;
+            novaImagem = Resources.Load<Sprite>(spritePath);
+
+            cartelaImage.sprite = novaImagem;
+
+            if (statusEstrela >= 3)
+            {
+                concluido = true;
+
+                // Reseta o status para zero
+                statusEstrela = 0;
+                PlayerPrefs.SetInt("statusEstrela", statusEstrela);
+                PlayerPrefs.Save();
+            }
+        }
+        jogando = false;
         if(concluido)
             {
+                jogar.SetActive(true);
                 PlayAudio("Audio/CARTELA_LIBERADA", () =>
                 {
                     // Ativa o botão ou outro objeto
-                    jogar.SetActive(true);
                 });
             }
             else
             {
-                PlayAudio("Audio/CARTELA_NAO_LIBERADA", () =>
+                if(statusEstrela == 0)
                 {
-                });
+                    PlayAudio("Audio/Cartela_nao_liberada_0", () =>
+                    {
+                    });
+                }
+                else
+                {
+                    PlayAudio("Audio/CARTELA_NAO_LIBERADA", () =>
+                    {
+                    });
+                }
             }
     }
 

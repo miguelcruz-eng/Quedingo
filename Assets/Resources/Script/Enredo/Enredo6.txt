@@ -1,10 +1,10 @@
 Character(Enf, Enfermeira, color=green, image=enfermeira)
-Character(Man, Manoel, color=yellow, image=manoel)
+Character(Jo, Joao, color=yellow, image=joao)
 label start
 show cenario with Fade
-Enf \"Olá Sr. Manoel! Como está se sentindo?
-Man \"Ah, enfermeira! Estou preocupado porque não comi e não tomei os remédios pra fazer um exame. Eu sou diabético e tenho pressão alta, daqui a pouco posso ficar com tontura.
+Enf \"Olá Sr. João! Como está se sentindo?
+Jo \"Ah, enfermeira! Estou preocupado porque não comi e não tomei os remédios pra fazer um exame. Eu sou diabético e tenho pressão alta, daqui a pouco posso ficar com tontura.
 Enf \"É preciso tomar cuidado! O Senhor vai em breve para o exame.
 Enf \"Enquanto isso, não tente andar sozinho, permaneça com a altura da cama baixa e com as grades elevadas para prevenir uma queda. Caso sinta algo, é só chamar!
-Man \"Está bem. Vou seguir as suas orientações e aviso se sentir algo.
+Jo \"Está bem. Vou seguir as suas orientações e aviso se sentir algo.
 screen cenario with Fade

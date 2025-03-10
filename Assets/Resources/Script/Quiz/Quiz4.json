@@ -1,6 +1,6 @@
 [
     {
-        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. Objetos espalhados pela enfermaria aumentam o risco de quedas.",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. Objetos espalhados pelo ambiente aumentam o risco de quedas.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
@@ -15,7 +15,7 @@
         "CorrectAnswer": 2
     },
     {
-        "Question": "Na sua opinião, Dona Luzia deve enfrentar sozinho o seu medo de cair?",
+        "Question": "Na sua opinião, Dona Luzia deve enfrentar sozinha o seu medo de cair?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },

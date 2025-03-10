@@ -5,7 +5,7 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "Para você, após a cirurgia Dona Luzia não está mais em risco de cair?",
+        "Question": "Para você, após a cirurgia Dona Luzia NÃO está mais em risco de cair?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },

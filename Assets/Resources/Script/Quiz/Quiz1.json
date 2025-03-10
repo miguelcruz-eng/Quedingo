@@ -10,7 +10,7 @@
         "CorrectAnswer": 1
     },
     {
-        "Question": "O fato do quarto estar escuro não tem nenhuma relação com a queda do Sr João. Você entende que é verdadeiro ou falso?",
+        "Question": "O fato do quarto estar escuro NÃO tem nenhuma relação com a queda do Sr João. Você entende que é verdadeiro ou falso?",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 2
     },
