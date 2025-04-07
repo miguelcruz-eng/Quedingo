@@ -1,6 +1,6 @@
 [
     {
-        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. A desorientação de Dona Severina aumenta o risco de quedas.",
+        "Question": "Marque o botão Verde para Verdadeiro e o Vermelho para Falso. A desorientação de Dona Severina aumenta o risco dela cair.",
         "Answers": ["sim", "nao"],
         "CorrectAnswer": 1
     },
